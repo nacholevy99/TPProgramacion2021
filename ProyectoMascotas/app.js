@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/home', homerouter)
+app.use('/', homerouter)
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 
