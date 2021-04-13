@@ -1,7 +1,10 @@
-var express = require('express');
-const loginController = require('../controllers/loginController');
-var router = express.Router();
+let express = require('express')
+let router = express.Router();
+let loginController = require('../controllers/loginController');
 
-router.get('/login', loginController.login);
+router.get('/', function(req,res,next) {
+    res.render('partials/login');
+
+});
 
 module.exports = router;
