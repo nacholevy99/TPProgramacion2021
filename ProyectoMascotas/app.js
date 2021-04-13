@@ -13,6 +13,9 @@ let loginRouter = require('./routes/login');
 
 let app = express();
 
+//Recursos CSS// 
+app.use(express.static('css'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
