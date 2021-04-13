@@ -7,14 +7,13 @@ let logger = require('morgan');
 
 var homerouter = require ('./routes/home')
 let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
 let registerRouter = require('./routes/register');
 let loginRouter = require('./routes/login');
 
 let app = express();
 
 //Recursos CSS// 
-app.use(express.static('css'));
+// app.use(express.static('css'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,9 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/home', homerouter)
+app.use('/', homerouter)
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 
