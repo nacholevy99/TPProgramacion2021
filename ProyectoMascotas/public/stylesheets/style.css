@@ -81,7 +81,7 @@ hr {
 .row {
   display: -ms-flexbox;
   display: flex;
-  
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -175,7 +175,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/imagenes/img-home-banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
