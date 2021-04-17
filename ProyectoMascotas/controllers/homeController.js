@@ -1,7 +1,7 @@
 const express = require('express');
 const productos = require('../productos/productos')
 
-const controller = {
+const homeController = {
     
     index: (req,res) => {
         res.render('home', {productos: productos.list})},
@@ -19,4 +19,4 @@ const controller = {
         res.render('add')    
 }
 
-module.exports = controller;
+module.exports = homeController;
