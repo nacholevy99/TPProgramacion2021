@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
-					<a href="index.html" class="main-header_home-link">
+					<a href="index.ejs" class="main-header_home-link">
 						<img src="./images/logo-mercado-liebre.svg">
 					</a>
 				</div>
@@ -47,12 +47,12 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="index.html">Todos los productos</a></li>
-					<li><a href="product-add.html">Cargar productos</a></li>
+					<li><a href="index.ejs">Todos los productos</a></li>
+					<li><a href="product-add.ejs">Cargar productos</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="profile.html">
+					<li><a href="profile.ejs">
 							Nombre del usuario <i class="fas fa-user"></i>
 						</a>
 					</li>
@@ -100,6 +100,39 @@
 				</div>
 			</div>
 		</div>
+
+		<body>
+			<br>
+			<h1 id="titulo"><%=usuario.nombre%></h1>
+			<br>
+			<br>
+			<br>
+			<div class="flex-container">
+			<div class="uk-margin">  
+				<div class="uk-inline">
+					<span class="uk-icon" uk-icon="icon: mail; ratio: 1.5"></span>
+					<label id="datos" for="">Email:</label>    
+			</div>
+			<ul>
+				<li class="li">
+					<%=usuario.email%>
+				</li>
+			</ul>
+				<br>
+				<div class="uk-inline">
+					<span class="uk-icon" uk-icon="icon: calendar; ratio: 1.5"></span>
+					<label id="datos" for="">Fecha de Nacimiento</label>
+			</div>
+				<ul>
+					<li class="li">
+						<%=usuario.fecha_de_nacimiento%>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
 	</section>
 	<!-- /Datos del usuario -->
 

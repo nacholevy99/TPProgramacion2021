@@ -5,6 +5,32 @@ let userController={
     register:(req,res) => {
         res.render('register', {title:"Register yourself"})
     },
-}
 
-module.exports = userController
+    save: async function(req, res){
+        let errores = [];
+        if (req.body.nombre == "") {
+            errores.push("Pone un nombre")
+    
+        } 
+        if (req.body.email == ""){
+            errores.push("Pone un mail")
+    
+        } 
+        if (errores.length == 0) {
+    
+            let usuario  = {
+                    nombre: req.body.nombre,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 8),
+                    fecha_de_nacimiento: req.body.fecha_de_nacimiento,
+                }
+        
+}}
+    profile:function(req,res){
+        res.render('profile', {title: "Mi perfil"})
+           
+        
+        }
+
+};
+module.exports = userController;
