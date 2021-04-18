@@ -1,13 +1,13 @@
 let express = require('express');
 let router = express.Router();
 
-let controller = require('../controllers/controladores');
+let homeController = require('../controllers/homeController');
 
-router.get('/', controller.index);
+router.get('/', homeController.index);
 
-router.get('/detalle', controller.detalle);
+router.get('/detalle', homeController.detalle);
 
-router.get('/add', controller.add);
+router.get('/add', homeController.add);
 
 
 //router.get('/home', controller.index);
