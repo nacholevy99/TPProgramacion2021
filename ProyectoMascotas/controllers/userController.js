@@ -25,7 +25,7 @@ let userController={
                     fecha_de_nacimiento: req.body.fecha_de_nacimiento,
                 }
         
-}}
+}},
     profile:function(req,res){
         res.render('profile', {title: "Mi perfil"})
            
