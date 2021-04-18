@@ -6,14 +6,14 @@ const homeController = {
 
     
     index: (req,res) => {
-        res.render('home', {productos: productos.list})},
+        let listaproductos = productos.lista
+        let respuesta = {lista : listaproductos}
+        for (let index = 0; index < respuesta.lista; index++){
+            console.log(respuesta.lista[index].describirse())
+        }
+        res.render('home', respuesta)},
         
-    name: (req,res) => res.render('home', {productos: productos.porName(req.params.name)}),
-    imagen: (req,res) => res.render('home', {productos: productos.porImagen(req.params.imagen)}),
-    comentario: (req,res) => res.render('home', {productos: productos.porComentario(req.params.comentario)}),
-    descripcioncorta: (req,res) => res.render('home', {productos: productos.porDescripcioncorta(req.params.descripcioncorta)}),
     
-
     detalle: (req,res) => 
         res.render('detalle'),
 
