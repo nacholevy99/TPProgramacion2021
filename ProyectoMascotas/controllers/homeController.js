@@ -3,7 +3,7 @@ const productos = require('../productos/productos')
 
 
 const homeController = {
->>>>>>> b2c0492caf4a39cfb3a1d14d6a7da80052a4d37f:ProyectoMascotas/controllers/homeController.js
+
     
     index: (req,res) => {
         res.render('home', {productos: productos.list})},
