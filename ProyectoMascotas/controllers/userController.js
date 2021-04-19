@@ -6,6 +6,7 @@ let userController={
         res.render('register', {title:"Register yourself"})
     },
 
+    //chequear esto
     save: async function(req, res){
         let errores = [];
         if (req.body.nombre == "") {
@@ -26,6 +27,7 @@ let userController={
                 }
         
 }},
+// chequear esto
     profile:function(req,res){
         res.render('profile', {title: "Mi perfil"})
            
