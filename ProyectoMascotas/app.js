@@ -6,7 +6,7 @@ let logger = require('morgan');
 
 
 let homeRouter = require ('./routes/home')
-let userRouter = require('./routes/userRoute');
+let userRouter = require('./routes/home');
 
 
 let app = express();
