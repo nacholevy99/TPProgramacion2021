@@ -97,6 +97,7 @@ hr {
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+  font-size: large;
 }
 
 .main-header_credit-link {
