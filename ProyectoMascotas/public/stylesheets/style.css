@@ -5,7 +5,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #06cee9;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -576,6 +576,12 @@ textarea.form-input {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+}
+.h1register {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 30px;
+  
 }
 }
 
