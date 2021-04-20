@@ -6,14 +6,16 @@ const homeController = {
 
     
     index: (req,res) => {
-        let listaproductos = productos.lista
-        let respuesta = {lista : listaproductos}
-        for (let index = 0; index < respuesta.lista; index++){
-            console.log(respuesta.lista[index].describirse())
-        }
-        res.render('home', respuesta)},
         
+        let resultado = {
+        nombre: 'pitbul',
+        imagen: '/stylesheets/imagenes/products/pitbull-1.jpg',
+        comentario: 'El American Pit Bull Terrier es una raza canina de Estados Unidos que se originó con la llegada de los inmigrantes ingleses que llevaban el Staffordshire bull terrier,'
+        };
+        
+        res.render('home', resultado)},
     
+
     detalle: (req,res) => 
         res.render('detalle'),
 

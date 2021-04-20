@@ -7,7 +7,7 @@
 	<%- include('partials/header.ejs') %>
     	<!-- Banner -->
 	<div class="banner">
-		<img src="/stylesheets/imagenes/img-home-banner.jpg" alt="Banner de ofertas">
+		<img src="/stylesheets/imagenes/products/19_4_2021 18_14_27.png" alt="">
 	</div>
 	<!-- /Banner -->
 
@@ -23,11 +23,11 @@
 				<section class="product-box">
 					<a href="/detalle"> 
 						<figure class="product-box_image">
-							<img src="/stylesheets/imagenes/products/default-image.png" alt="pitbull">
+							<img src="<%= imagen%>" alt="producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=  %></h2>
-							<p><%= %></p>
+							<h2><%= nombre %></h2>
+							<p><%= comentario%></p>
 							<p>Comentarios: 3</p>
 						</article>
 					</a>
@@ -50,11 +50,11 @@
 				<section class="product-box">
 					<a href="/detalle">
 						<figure class="product-box_image">
-							<img src="/stylesheets/imagenes/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= imagen%>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
+							<h2><%= nombre %></h2>
+							<p><%= comentario%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>

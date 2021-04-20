@@ -176,7 +176,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/imagenes/img-home-banner.jpg);
+  background-image: url(/stylesheets/imagenes/products/bannerimagen.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -400,6 +400,18 @@ hr {
   margin-bottom: 15px;
 }
 
+.add-now-button {
+  background-color: var(--light-blue);
+  font-size: 1.6em;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  width: 92%;
+  margin-left: 14px;
+}
+
 .action-button {
   border: none;
   border-radius: 8px;
@@ -508,7 +520,7 @@ textarea.form-input {
   }
 
   .banner {
-    height: 320px;
+    height: 325px;
   }
 
   .btn-toggle-navbar {
