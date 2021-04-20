@@ -10,7 +10,9 @@ router.get('/register', userController.register);
 router.get('/login', userController.login);
 //localhost:3000/login
 
-router.get('/users/profile', userController.profile)
+router.get('/profile', userController.profile)
 //localhost:3000/profile
+
+router.get('/profile-edit', userController.edit)
 
 module.exports = router;

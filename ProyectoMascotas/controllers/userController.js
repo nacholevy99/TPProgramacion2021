@@ -9,7 +9,10 @@ let userController={
 // chequear esto
     profile:(req,res) => {
         res.render('profile', {title: "Mi perfil"})
-    }
+    },
 
+    edit:(req,res) => {
+        res.render('profile-edit', {title: "Editar Perfil"})
+    }
 };
 module.exports = userController;
