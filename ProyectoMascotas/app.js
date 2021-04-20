@@ -6,7 +6,7 @@ let logger = require('morgan');
 
 
 let homeRouter = require ('./routes/home')
-let userRouter = require('./routes/users');
+let usersRouter = require('./routes/users');
 
 
 let app = express();
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', homeRouter)
-app.use('/users', userRouter);
+app.use('/users', usersRouter);
 
 
 
