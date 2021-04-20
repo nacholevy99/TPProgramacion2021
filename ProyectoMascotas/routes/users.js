@@ -13,4 +13,6 @@ router.get('/login', userController.login);
 router.get('/profile', userController.profile)
 //localhost:3000/profile
 
+router.get('/profile-edit', userController.edit)
+
 module.exports = router;
