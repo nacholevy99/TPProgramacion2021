@@ -2,15 +2,14 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%- include('partials/head.ejs') %>
-
-<%- include('partials/header.ejs') %>
 <body>
+	<%- include('partials/head.ejs') %>
 
+	<%- include('partials/header.ejs') %>
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultado de busqueda</h2>
+				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			
 			<% for (let index = 0; index < 4; index++) { %>
@@ -34,7 +33,6 @@
 	</div>
 	
 	
-
 	<%- include('partials/footer.ejs') %>
 </body>
 
