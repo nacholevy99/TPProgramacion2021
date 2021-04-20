@@ -1,7 +1,3 @@
-const express = require('express');
-const productos = require('../productos/productos')
-
-
 const homeController = {
 
     
@@ -13,11 +9,11 @@ const homeController = {
         comentario: 'El American Pit Bull Terrier es una raza canina de Estados Unidos que se originó con la llegada de los inmigrantes ingleses que llevaban el Staffordshire bull terrier,'
         };
         
-        res.render('home', resultado)},
+        res.render('index', resultado)},
     
 
-    detalle: (req,res) => 
-        res.render('detalle'),
+    productos: (req,res) => 
+        res.render('productos'),
 
 
     add: (req,res) => 
