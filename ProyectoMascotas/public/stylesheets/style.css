@@ -176,7 +176,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/imagenes/img-home-banner.jpg);
+  background-image: url(/stylesheets/imagenes/products/bannerimagen.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -508,7 +508,7 @@ textarea.form-input {
   }
 
   .banner {
-    height: 320px;
+    height: 325px;
   }
 
   .btn-toggle-navbar {
