@@ -12,5 +12,7 @@ router.get('/detalle', homeController.detalle);
 router.get('/add', homeController.add);
 //localhost:3000/add
 
+router.get('/search-results', homeController.results)
+//localhost:3000/search-results
 
 module.exports = router;

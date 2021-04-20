@@ -21,7 +21,10 @@ const homeController = {
 
 
     add: (req,res) => 
-        res.render('add')    
+        res.render('add'),    
+
+    results: (req,res)=> 
+    res.render('search-results')   
 }
 
 module.exports = homeController;
