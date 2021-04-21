@@ -690,11 +690,21 @@ textarea.form-input {
   padding-right: 15px;
   padding-left: 15px;
 }
-.h1register {
+.tituloregis {
   text-align: center;
   margin-bottom: 50px;
   font-size: 30px;
   
 }
+.uk-margin {
+  text-align: center;
+  font-size: 20px;
+  margin:5px;
+  
+}
+input {
+  text-align: center;
+}
+
 }
 
