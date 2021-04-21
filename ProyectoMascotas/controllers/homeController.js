@@ -4,7 +4,18 @@ const homeController = {
 
     
     index: (req,res) => {
+<<<<<<< HEAD
         res.render('index', {productos: productos.list})},
+=======
+        
+        let resultado = {
+        nombre: 'Pitbull',
+        imagen: '/images/products/pitbull-1.jpg',
+        comentario: 'El American Pit Bull Terrier es una raza canina de Estados Unidos que se originó con la llegada de los inmigrantes ingleses que llevaban el Staffordshire bull terrier,'
+        };
+        
+        res.render('index', resultado)},
+>>>>>>> 27bdf09a949ff3cc93ec76e96d803f378b0d91c8
     
 
     productos: (req,res) => { 

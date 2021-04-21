@@ -25,12 +25,16 @@ body {
   min-height: 100vh;
   margin: 0;
   font-size: 10px;
+  
 }
 
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
   background-color: var(--light-gray);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align:justify;
+
 }
 
 ul,
@@ -70,7 +74,8 @@ hr {
 
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: #578DFF;
+  font-family: "calibri", Garamond, 'Comic Sans';
 }
 
 .align-items-center {
@@ -161,10 +166,11 @@ hr {
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+  
 }
 
 .logout:hover{
-  color: #1259c3;
+  color: #578DFF;
 }
 
 .left-navbar a,
@@ -191,9 +197,10 @@ hr {
 }
 
 .products-title {
-  font-size: 2.4em;
+  font-size: 2.2em;
   font-weight: 400;
-  color: var(--gray);
+  color: var(--dark-blue);
+  text-align: center;
 }
 
 .product-box {
@@ -231,6 +238,8 @@ hr {
   font-weight: 300;
   color: var(--green);
   margin: 0 0 0 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .product-box_data p {
@@ -284,7 +293,6 @@ hr {
   background-color: #ffffff;
   padding: 20px 0;
   margin-top: 80px;
-  border-radius: 46px;
 }
 
 .footer-data {
@@ -292,13 +300,15 @@ hr {
 }
 
 .footer-data i {
-  font-size: 3.5em;
+  font-size: 2.5em;
 }
 
 .footer-data h2 {
   color: var(--gray);
-  font-size: 2.4em;
+  font-size: 2em;
   font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .footer-data p {
@@ -317,8 +327,54 @@ hr {
   color: var(--gray);
   padding: 15px 0;
 }
+ul.iconos{
+    margin-bottom: 40px;
+    margin-left: 700px;
+}
 
+ul.redes{
+  float: left;
+  font-size: 5%;
+  color: #578DFF;
+}
 
+ ul.descargas{
+   float: left;
+   font-size: 5%;
+   margin-top: 0px;
+}
+ul.iconos-redes{
+  font-size: 24px;
+  position: relative;
+  left: -31px;
+  top:-18px;
+  color: #578DFF;
+}
+.iconos-redes i:hover{
+  color: #578DFF;
+}
+ul.iconos-descargas{
+  font-size: 24px;
+  position: relative;
+  left: 12px;
+  top:-18px;
+  color: #578DFF;
+}
+.iconos-descargas i:hover{
+  color: #578DFF
+  }
+
+h6.titulos-redes{
+  font-family: sans-serif;
+  font-size: .875rem;
+  color: #578DFF;
+
+}
+h6.titulos-descargas{
+  font-family: sans-serif;
+  font-size: .875rem;
+  color: #578DFF;
+}
 /*====== Product Detail ======*/
 .product-detail {
   background-color: #ffffff;
@@ -486,6 +542,8 @@ textarea.form-input {
 
 .foto-perfil{
   border-radius: 50%;
+  width: 10%;
+  
 }
 
 .main-title{
@@ -494,8 +552,8 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
-  padding: 10px 20px;
+  background-color: #578DFF;
+  padding: 6px 16px;
   border-radius: 4px;
   color: #fff;
 }
