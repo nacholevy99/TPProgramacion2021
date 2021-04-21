@@ -696,5 +696,15 @@ textarea.form-input {
   font-size: 30px;
   
 }
+.uk-margin {
+  text-align: center;
+  font-size: 20px;
+  margin:5px;
+  
+}
+input {
+  text-align: center;
+}
+
 }
 
