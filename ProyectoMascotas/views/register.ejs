@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
+
+	<link rel="stylesheet" href="/stylesheets/register-form.css">
 <!-- Include Head -->
 
 <body>
@@ -7,52 +9,40 @@
 
 	<%- include('partials/header.ejs') %>
 	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h1 class= "tituloregis"> <span>Registrarse</span></h1>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-				
-			<div class= "flex-container">
-			<form action="/users/profile" method="GET">
-				<div class="uk-margin">
-					<label id="label" for="">Nombre</label>
-					<br>
-					<div class="uk-inline">  
-					<span class="uk-form-icon" uk-icon="icon: user"></span>
-					<input class="uk-input uk-form-width-large" type="text" name="nombre">
-					</div>
-				</div>
-				<div class="uk-margin">
-					<label id="label" for="">E-mail</label>
-					<br>
-					<div class="uk-inline">
-					<span class="uk-form-icon" uk-icon="icon: mail"></span>
-					<input class="uk-input uk-form-width-large" type="email" name="email">
-					</div>
-				</div>
+	<h1 id="titulo"><span>Registrarse</span></h1>
+    <div class="flex-container">
+		<form id="formRegister" method="GET" class="uk-background-secondary uk-padding uk-padding-large" action="/users/profile" >
 			<div class="uk-margin">
-				<label id="label" for="">Contraseña</label>
-				<br>
-				<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: lock"></span>
-				<input class="uk-input uk-form-width-large" type="password" name="password">
-				</div>
-			</div>
-			<div class="uk-margin">
-				<label id="label" for="">Fecha de nacimiento</label>
-				<br>
-				<input class="uk-input uk-form-width-large" type="date" name="fecha_de_nacimiento">
-			</div>
-			<br>
-			<input class="buttonEnviar" type="submit" value="Enviar">
-				</form>
-			</div>
-		</div>		
-			</h2>
-		</div>
+            <label id="label" for="">Nombre</label>
+            <br>
+            <div class="uk-inline">  
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input class="uk-input uk-form-width-large" type="text" name="nombre">
+        </div>
+        </div>
+        <div class="uk-margin">
+            <label id="label" for="">E-mail</label>
+            <br>
+            <div class="uk-inline">
+            <input class="uk-input uk-form-width-large" type="email" name="email">
+        </div>
+        </div>
+        <div class="uk-margin">
+            <label id="label" for="">Contraseña</label>
+            <br>
+            <div class="uk-inline">
+            <input class="uk-input uk-form-width-large" type="password" name="password">
+            </div>
+        </div>
+        <div class="uk-margin">
+            <label id="label" for="">Fecha de nacimiento</label>
+            <br>
+            <input class="uk-input uk-form-width-large" type="date" name="fecha_de_nacimiento">
+        </div>
+        
+        <input class="button button2" type="submit" value="Enviar">
+    </form> 
+</div>
           
 	<!-- footer -->
 	<%- include('partials/footer.ejs') %>

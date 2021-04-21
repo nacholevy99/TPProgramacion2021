@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: lightgrey;
+    /* padding-bottom: 205px; */
+  }
+  #titulo{
+    color: #a5af24;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+  }
+  
+
+  #label{
+    color: black;
+    text-align: center;
+    font-weight: 400;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .button {
+    background-color: #a5af24; 
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    align-self: center;    
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .button2:hover {
+    background-color: white;
+    color: #a5af24;
+  }
+
+  div.flex-container {
+    display: flex;
+    justify-content: center;
+    background-color:#ebebeb;
+  }
+ 
+  .uk-form-width-large {
+    width: 450px;
+    border-color: black;
+    }
