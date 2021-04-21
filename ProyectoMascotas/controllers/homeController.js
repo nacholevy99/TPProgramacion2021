@@ -6,12 +6,12 @@ const homeController = {
     index: (req,res) => {
 
         res.render('index', {productos: productos.list})},
-        
+
     productos: (req,res) => { 
         let resultado = {
-            nombre: 'Pitbul',
-            imagen: '/stylesheets/imagenes/products/pitbull-1.jpg',
-            descripcion: 'El American Pit Bull Terrier es una raza canina de Estados Unidos que se originó con la llegada de los inmigrantes ingleses que llevaban el Staffordshire bull terrier. El APBT (American Pit Bull Terrier) es un perro de tamaño medio, los machos suelen pesar de 16 a 27 kg y las hembras de 13 a 25 kg. Son de constitución atlética y su cría se centra principalmente en el carácter y rendimiento del perro funcional.'
+            nombre: 'Camitas Personalizadas',
+            imagen: '/images/products/producto1.webp',
+            descripcion: 'Casa para perro diseñada con el tamaño ideal para razas mediana y grandes,cuenta con un piso elevado del suelo para aislar y mantener seco al perro. A su vez, el material que posee es resistente a la humedad y fácil de limpiar.'
             
             };
         res.render('productos',resultado)
@@ -22,9 +22,9 @@ const homeController = {
 
     results: (req,res) => { 
         let resultado = {
-            nombre: 'Pitbul',
-            imagen: '/stylesheets/imagenes/products/pitbull-1.jpg',
-            descripcion: 'El American Pit Bull Terrier es una raza canina de Estados Unidos que se originó con la llegada de los inmigrantes ingleses que llevaban el Staffordshire bull terrier. El APBT (American Pit Bull Terrier) es un perro de tamaño medio, los machos suelen pesar de 16 a 27 kg y las hembras de 13 a 25 kg. Son de constitución atlética y su cría se centra principalmente en el carácter y rendimiento del perro funcional.'
+            nombre: 'Camitas Personalizadas',
+            imagen: '/images/products/producto1.webp',
+            descripcion: 'Camitas 80 x 60 cm REFORZADAS para mascotas.'
                 
           };
         res.render('search-results',resultado)
