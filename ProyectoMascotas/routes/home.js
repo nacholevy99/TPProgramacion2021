@@ -9,7 +9,7 @@ router.get('/', homeController.index);
 router.get('/productos', homeController.productos);
 //localhost:3000/productos
 
-router.get('/add', homeController.add);
+router.get('/product-add', homeController.add);
 //localhost:3000/add
 
 router.get('/search-results', homeController.results)

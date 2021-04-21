@@ -18,22 +18,22 @@
 				<h2 class="products-title">Novedades</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for (let index = 0; index < 4; index++) { %>
+			<% productos.forEach(element => {%>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/productos"> 
 						<figure class="product-box_image">
-							<img src="<%= imagen%>" alt="producto">
+							<img src="<%= element.imagen%>" alt="producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= nombre %></h2>
-							<p><%= comentario%></p>
+							<h2><%= element.name %></h2>
+							<p><%= element.descripcioncorta %></p>
 							<p>Comentarios: 3</p>
 						</article>
 					</a>
 				</section>
 			</div>
-			<% } %>
+			<% }) %>
 			
 		</div>
 	</div>
@@ -45,22 +45,22 @@
 				<h2 class="products-title">Más comentados</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for (let index = 0; index < 4; index++) { %>
+			<% productos.forEach(element => {%>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/productos">
 						<figure class="product-box_image">
-							<img src="<%= imagen%>" alt="cafetera moulinex">
+							<img src="<%= element.imagen%>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= nombre %></h2>
-							<p><%= comentario%></p>
+							<h2><%= element.name %></h2>
+							<p><%= element.descripcioncorta%></p>
 							<p>Comentarios: 12</p>
 						</article>
 					</a>
 				</section>
 			</div>
-			<% } %>
+			<% }) %>
 		</div>
 	</div>
 	<!-- /Más comentados -->
