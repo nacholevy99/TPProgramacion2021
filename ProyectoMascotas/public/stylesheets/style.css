@@ -5,7 +5,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #06cee9;
+  --yellow: #a5af24;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -74,7 +74,7 @@ hr {
 
 .main-header {
   padding: 15px 0;
-  background-color: #578DFF;
+  background-color: var(--yellow);
   font-family: "calibri", Garamond, 'Comic Sans';
 }
 
@@ -557,6 +557,65 @@ textarea.form-input {
 }
 
 
+#slider {
+	overflow: hidden;
+}
+#slider figure {
+	position: relative;
+	width: 500%;
+	margin: 0;
+	left: 0;
+	animation: 20s slider infinite;
+}
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
+}
+
+.foto1{
+  width:250px;
+  height:800px;
+}
+
+.foto2{
+  width:250px;
+  height:800px;
+}
+.foto3{
+  width:250px;
+  height:800px;
+}
+
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
@@ -567,6 +626,7 @@ textarea.form-input {
 
   .banner {
     height: 325px;
+   
   }
 
   .btn-toggle-navbar {
