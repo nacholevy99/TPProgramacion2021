@@ -386,6 +386,8 @@ h6.titulos-descargas{
   width: 70%;
   display: block;
   margin: auto;
+  padding-top: 30px;
+  margin-bottom: 32px;
 }
 
 .product-detail-info {
