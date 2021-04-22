@@ -29,7 +29,6 @@
     padding: 10px 25px;
     text-align: center;
     align-self: center;    
-    display: inline-block;
     font-size: 12px;
     cursor: pointer;
   }
@@ -38,6 +37,15 @@
     background-color: white;
     color: #a5af24;
   }
+
+  .botones-form{
+  margin-left: 470px;  
+  }
+
+  .boton-registform{
+    margin-left: 720px;
+  }
+
 
   div.flex-container {
     display: flex;
