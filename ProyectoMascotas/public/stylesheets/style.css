@@ -543,16 +543,23 @@ textarea.form-input {
   height: 100%;
   left: 0;
   top: 0;
-  width: 18%;
+  width: 15%;
   border-radius: 50%;
 }
 
 
 .main-title{
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 10px;
   font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
 }
+
+h3.tit-datos{
+  font-size: 17px;
+  font-weight: 200;
+  font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
 
 .btn{
   background-color: #a5af24;
