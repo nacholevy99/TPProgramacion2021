@@ -1,3 +1,5 @@
+const productos = require('../productos/productos.js');
+
 let userController={
     login:(req,res) => {
         res.render('login', {title:"Login Page"})
@@ -8,7 +10,7 @@ let userController={
 
 // chequear esto
     profile:(req,res) => {
-        res.render('profile', {title: "Mi perfil"})
+        res.render('profile', {productos:productos.list})
     },
 
     edit:(req,res) => {
