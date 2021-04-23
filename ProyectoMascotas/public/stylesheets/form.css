@@ -39,13 +39,16 @@
   }
 
   .botones-form{
-  margin-left: 470px;  
+    margin-left: 460px;  
   }
 
   .boton-registform{
     margin-left: 720px;
   }
 
+  .boton-save{
+    margin-left: 520px;
+  }
 
   div.flex-container {
     display: flex;
