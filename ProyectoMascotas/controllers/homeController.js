@@ -11,8 +11,10 @@ const homeController = {
         let resultado = {
             nombre: 'Camitas Personalizadas',
             imagen: '/images/products/producto1.webp',
-            descripcion: 'Casa para perro diseñada con el tamaño ideal para razas mediana y grandes,cuenta con un piso elevado del suelo para aislar y mantener seco al perro. A su vez, el material que posee es resistente a la humedad y fácil de limpiar.'
-            
+            descripcion: 'Casa para perro diseñada con el tamaño ideal para razas mediana y grandes,cuenta con un piso elevado del suelo para aislar y mantener seco al perro. A su vez, el material que posee es resistente a la humedad y fácil de limpiar.',
+            usuario: 'Juan López',
+            comentario: 'Muy buenoo!!, lo recomiendo para gente con perros grandes',
+            imagenperfil: '/images/users/juan-lopez.jpeg'
             };
         res.render('productos',resultado)
      },

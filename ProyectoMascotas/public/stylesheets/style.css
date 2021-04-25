@@ -86,10 +86,13 @@ hr {
 .row {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }
+
+
 
 .container {
   width: 100%;
@@ -199,9 +202,9 @@ hr {
 .products-title {
   font-size: 2.2em;
   font-weight: 400;
-  color:dimgray;
+  color: dimgray;
   text-align: center;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: cursive;
 }
 
 .product-box {
@@ -232,6 +235,7 @@ hr {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+  font-family: "Homer Simpson UI";
 }
 
 .product-box_data span {
@@ -244,13 +248,14 @@ hr {
 }
 
 .product-box_data p {
-  font-size: 1.5em;
+  font-size: 1.3em;
   width: 100%;
   color: var(--gray);
   margin: 0;
   height: 0;
   transition: 300ms;
   overflow: hidden;
+  font-family: 'Roboto';
 }
 
 .product-box_data i {
@@ -291,6 +296,14 @@ hr {
 
 
 /*====== Footer ======*/
+.footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
 .main-footer {
   background-color: #ffffff;
   padding: 20px;
@@ -639,6 +652,7 @@ h3.tit-datos{
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;
+    font-family: "Consolas";
   }
 
   .banner {
@@ -656,6 +670,7 @@ h3.tit-datos{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    font-family: "Consolas";
   }
 
   .left-navbar a,

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<link rel="stylesheet" href="/stylesheets/botones.css">
+	
 
 
 <body>
@@ -26,11 +26,11 @@
 					<section class="comments">
                         <% for (let index = 0; index < 5; index++) { %>
 						<article>
-							<img src="/images/users/logousuario.png" alt="">
+							<img src="<%= imagenperfil%>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet.</p>
+									<strong> <a href="/users/profile"><%= usuario%>: </a> </strong>
+									<%= comentario%>.</p>
 							</div>
 						</article>
 						<% } %>
