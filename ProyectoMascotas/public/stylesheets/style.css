@@ -418,6 +418,7 @@ h6.titulos-descargas{
   padding: 15px 15px 15px 40px;
   font-size: 1.8em;
   line-height: 1.5;
+  font-family: 'Roboto';
 }
 
 .product-detail-price {
@@ -498,6 +499,7 @@ h6.titulos-descargas{
   border-bottom: 1px solid #dcdcdc;
   display: flex;
   justify-content: space-between;
+  padding-top: 4px;
 }
 .comments img{
   width: 40px;
@@ -514,6 +516,7 @@ h6.titulos-descargas{
 }
 .comments .user{
   font-size: 1.7em;
+  font-family: 'Roboto';
 }
 
 /*====== Formularios ======*/
