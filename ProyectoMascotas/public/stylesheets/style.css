@@ -323,7 +323,7 @@ hr {
   color:dimgray;
   font-size: 2em;
   font-weight: 400;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto';
 
 }
 
@@ -652,7 +652,7 @@ h3.tit-datos{
   .main-header_credit-link {
     margin-top: 0;
     text-align: right;
-    font-family: "Consolas";
+    font-family: cursive;
   }
 
   .banner {
@@ -670,7 +670,7 @@ h3.tit-datos{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    font-family: "Consolas";
+    font-family: cursive;
   }
 
   .left-navbar a,
