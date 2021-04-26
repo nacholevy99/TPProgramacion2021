@@ -2,10 +2,9 @@
     box-sizing: border-box;
   }
   
-  body{
-    background-color: lightgrey;
+  
     /* padding-bottom: 205px; */
-  }
+  
   #titulo{
     color: #a5af24;
     display: flex;
