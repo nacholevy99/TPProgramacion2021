@@ -11,7 +11,7 @@
     <!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= nombre %></h2> 
+			<h2 class="products-title"><%= lista.nombre %></h2> 
 			<p class="product-detail-description">
 				<a href="/product-add"><i class="far fa-star"></i></a>
 			</p>
@@ -19,18 +19,18 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= imagen%>" alt="" class="product-detail-img">
-					<p class="product-detail-description"><%= descripcion%></p>
+					<img src="<%= lista.url%>" alt="" class="product-detail-img">
+					<p class="product-detail-description"><%= %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
                         <% for (let index = 0; index < 5; index++) { %>
 						<article>
-							<img src="<%= imagenperfil%>" alt="">
+							<img src="<%= %>" alt="">
 							<div class="data">
 								<p class="user">
 									<strong> <a href="/users/profile"><%= usuario%>: </a> </strong>
-									<%= comentario%>.</p>
+									<%= %>.</p>
 							</div>
 						</article>
 						<% } %>

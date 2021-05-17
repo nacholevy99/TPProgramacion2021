@@ -1,6 +1,8 @@
 const productos = require('../productos/productos.js');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 
-const homeController = {
+module.exports = {
 
     
     index: (req,res) => {
@@ -8,15 +10,9 @@ const homeController = {
         res.render('index', {productos: productos.list})},
 
     productos: (req,res) => { 
-        let resultado = {
-            nombre: 'Camitas Personalizadas',
-            imagen: '/images/products/producto1.webp',
-            descripcion: 'Casa para perro diseñada con el tamaño ideal para razas mediana y grandes,cuenta con un piso elevado del suelo para aislar y mantener seco al perro. A su vez, el material que posee es resistente a la humedad y fácil de limpiar.',
-            usuario: 'Juan López',
-            comentario: 'Muy buenoo!!, lo recomiendo para gente con perros grandes',
-            imagenperfil: '/images/users/juan-lopez.jpeg'
-            };
-        res.render('productos',resultado)
+        db.Producto.findByPk(req.params.id).then(resultado => {
+            res.render('productos', { lista: resultado});
+        });
      },
 
     add: (req,res) => { 
@@ -32,4 +28,3 @@ const homeController = {
         res.render('search-results',resultado)
     },
  }
-module.exports = homeController;
