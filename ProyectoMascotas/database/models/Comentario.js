@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    const comentario = sequelize.define('comentarios', {
+    const comentario = sequelize.define('Comentario', {
        id: {
            autoIncrement: true,
            primaryKey: true,

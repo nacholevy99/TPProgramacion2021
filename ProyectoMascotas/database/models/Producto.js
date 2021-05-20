@@ -9,14 +9,11 @@ module.exports = (sequelize, dataTypes) => {
         url: {
             type: dataTypes.STRING(1000)
         },
-        nombre: {
+        nombre_producto: {
             type: dataTypes.STRING
         },
-        fecha: {
+        fecha_creacion: {
             type: dataTypes.DATE
-        },
-        usuarios: {
-            type: dataTypes.STRING
         },
     }, {
        tableName: "productos",

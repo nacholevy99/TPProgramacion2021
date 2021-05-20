@@ -6,11 +6,18 @@ module.exports = {
 
     
     index: (req,res) => {
-
-        res.render('index', {productos: productos.list})},
+       
+          let filtro = {
+              limit: 4
+          }
+       
+        db.productos.findAll(filtro).then(resultado => {
+        res.render('index', {productos: resultado});
+        });
+    },
 
     productos: (req,res) => { 
-        db.Producto.findByPk(req.params.id).then(resultado => {
+        db.productos.findAll().then(resultado => {
             res.render('productos', { lista: resultado});
         });
      },
@@ -19,12 +26,15 @@ module.exports = {
         res.render('product-add', {productos: productos.list})},   
 
     results: (req,res) => { 
-        let resultado = {
-            nombre: 'Camitas Personalizadas',
-            imagen: '/images/products/producto1.webp',
-            descripcion: 'Camitas 80 x 60 cm REFORZADAS para mascotas.'
-                
-          };
-        res.render('search-results',resultado)
+        const filtro = {
+            where: {
+                title: {[Op.like]:'%' + req.query.search + '%'}
+            }
+        }
+        db.productos.findAll(filtro).then(resultado => {
+            res.render('search-results', { buscar: resultado});
+        });
     },
+
+    
  }
