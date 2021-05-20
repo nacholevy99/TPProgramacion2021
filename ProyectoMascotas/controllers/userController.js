@@ -14,7 +14,13 @@ module.exports ={
 
 // chequear esto
     profile:(req,res) => {
-        res.render('profile', {productos:productos.list})
+        let filtro = {
+            limit: 8
+        }
+     
+      db.productos.findAll(filtro).then(resultado => {
+      res.render('profile', {productos: resultado});
+      });
     },
 
     edit:(req,res) => {

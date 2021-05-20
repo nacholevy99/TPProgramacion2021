@@ -28,7 +28,7 @@ module.exports = {
     results: (req,res) => { 
         const filtro = {
             where: {
-                title: {[Op.like]:'%' + req.query.search + '%'}
+                title: {[Op.like]:'%' + req.query.filtro + '%'}
             }
         }
         db.productos.findAll(filtro).then(resultado => {
