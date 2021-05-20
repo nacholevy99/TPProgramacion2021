@@ -18,7 +18,7 @@ module.exports ={
             limit: 8
         }
      
-      db.productos.findAll(filtro).then(resultado => {
+      db.Producto.findAll(filtro).then(resultado => {
       res.render('profile', {productos: resultado});
       });
     },

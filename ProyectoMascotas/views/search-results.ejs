@@ -12,15 +12,15 @@
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-
+			<% buscar.forEach(element => {%>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/productos"> 
 						<figure class="product-box_image">
-							<img src="<%= buscar.url %>" alt="producto">
+							<img src="<%= element.url %>" alt="producto">
 						</figure>
 						<article class="product-box_data">
-							<h2><%= buscar.nombre_producto %></h2>
+							<h2><%= element.nombre_producto %></h2>
 							<p><%=  %></p>
 							<p>Comentarios: 3</p>
 						</article>
@@ -28,7 +28,7 @@
 				</section>
 			</div>
 	
-			
+			<% }) %>
 		</div>
 	</div>
 	
