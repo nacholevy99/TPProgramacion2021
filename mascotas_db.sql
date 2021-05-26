@@ -1,16 +1,16 @@
 CREATE TABLE usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-mail VARCHAR(300) NOT NULL,
-contraseña VARCHAR(300) NOT NULL,
-fecha_nacimiento DATE NOT NULL,
+mail VARCHAR(300) ,
+contraseña VARCHAR(300) ,
+fecha_nacimiento DATE ,
 edad INT
 );
 
 CREATE TABLE productos (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-url VARCHAR(1000) NOT NULL,
-nombre_producto VARCHAR(300) NOT NULL,
-fecha_creacion DATE NOT NULL,
+url VARCHAR(1000) ,
+nombre_producto VARCHAR(300) ,
+fecha_creacion DATE ,
 usuarios_id INT UNSIGNED,
 FOREIGN KEY (usuarios_id) REFERENCES usuarios (id)
 );
@@ -19,8 +19,8 @@ CREATE TABLE comentarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 productos_id INT UNSIGNED,
 usuarios_id INT UNSIGNED,
-comentario TEXT NOT NULL,
-fecha_creacion DATE NOT NULL,
+comentario TEXT ,
+fecha_creacion DATE ,
 FOREIGN KEY (usuarios_id) REFERENCES usuarios (id),
 FOREIGN KEY (productos_id) REFERENCES productos (id)
 );

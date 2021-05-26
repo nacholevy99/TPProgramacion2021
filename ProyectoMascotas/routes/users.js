@@ -7,6 +7,9 @@ let userController = require('../controllers/userController');
 router.get('/register', userController.register);
 //localhost:3000/register
 
+router.post('/register', userController.registerpost);
+//localhost:3000/register
+
 router.get('/login', userController.login);
 //localhost:3000/login
 
