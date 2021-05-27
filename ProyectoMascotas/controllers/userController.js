@@ -1,6 +1,7 @@
 const productos = require('../productos/productos.js');
 const db = require('../database/models');
 const Op = db.Sequelize.Op;
+const bcrypt = require('bcryptjs')
 
 module.exports ={
     
@@ -25,5 +26,21 @@ module.exports ={
 
     edit:(req,res) => {
         res.render('profile-edit', {title: "Editar Perfil"})
-    }
+    },
+
+    registerpost:(req,res) => {
+        let password = bcrypt.hashSync(req.body.password)
+        db.Usuario.create({
+            // nombre: req.body.nombre,
+            mail: req.body.email,
+            contraseña: password,
+            fecha_nacimiento: req.body.fecha_de_nacimiento,
+        })
+        .then(Usuario=>{
+            res.redirect('/')
+
+        })
+    },
+
+    
 };
