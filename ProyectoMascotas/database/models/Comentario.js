@@ -6,7 +6,12 @@ module.exports = (sequelize, dataTypes) => {
            primaryKey: true,
            type: dataTypes.INTEGER
         },
-       
+        comentario: {
+            type: dataTypes.STRING(1000)
+        },
+        fecha_creacion: {
+            type: dataTypes.DATE
+        },
         
 
     }, {
