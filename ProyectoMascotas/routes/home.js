@@ -6,7 +6,7 @@ let homeController = require('../controllers/homeController');
 router.get('/', homeController.index);
 //localhost:3000
 
-router.get('/productos', homeController.productos);
+router.get('/productos/:id', homeController.productos);
 //localhost:3000/productos
 
 router.get('/product-add', homeController.add);

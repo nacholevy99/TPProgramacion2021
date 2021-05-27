@@ -17,7 +17,10 @@ module.exports = {
     },
 
     productos: (req,res) => { 
-        db.Producto.findAll().then(resultado => {
+
+        let idproducto = req.params.id;     
+
+        db.Producto.findByPk(idproducto).then(resultado => {
             res.render('productos', { lista: resultado});
         });
      },
