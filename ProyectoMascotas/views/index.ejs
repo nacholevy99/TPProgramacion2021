@@ -34,7 +34,7 @@
 						</figure>
 						<article class="product-box_data">
 							<h2><%= element.nombre_producto %></h2>
-							<!-- <p><%= element.descripcion %></p> -->
+							<p><%= element.descripcion %></p> 
 							<p>Comentarios: 3</p>
 						</article>
 					</a>
@@ -55,7 +55,7 @@
 			<% productos.forEach(element => {%>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/productos">
+					<a href="/productos/<%= element.id%>">
 						<figure class="product-box_image">
 							<img src="<%= element.url%>" alt="">
 						</figure>

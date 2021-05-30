@@ -34,9 +34,15 @@ module.exports = {
                 nombre_producto: {[Op.like]:'%' + req.query.search + '%'}
             }
         }
+        if(req.params.buscar = true){
+
         db.Producto.findAll(filtro).then(resultado => {
             res.render('search-results', { buscar: resultado});
         });
+        } else {
+            res.render('search-results', { buscar: "no se a encontrado el resultado"});
+        }
+
     },
 
     
