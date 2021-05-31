@@ -24,11 +24,15 @@ module.exports = (sequelize, dataTypes) => {
        timestamps: false
    });
 
-   // Clase 31/5 (ver despues)
+   // Clase 31/5 (re chequear)
    Producto.associate = (db) => {
             Producto.belongsTo(db.Usuario, {
-                as: ''
-            })
+                as: '', 
+                foreginKey: ''
+            });
+            
+      
+
    };
     
    
