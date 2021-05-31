@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, dataTypes) => {
 
     const producto = sequelize.define('Producto', {
@@ -22,6 +23,14 @@ module.exports = (sequelize, dataTypes) => {
        tableName: "productos",
        timestamps: false
    });
+
+   // Clase 31/5 (ver despues)
+   Producto.associate = (db) => {
+            Producto.belongsTo(db.Usuario, {
+                as: ''
+            })
+   };
+    
    
        return producto;
     }
