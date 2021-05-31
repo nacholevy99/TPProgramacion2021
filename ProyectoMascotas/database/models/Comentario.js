@@ -12,7 +12,12 @@ module.exports = (sequelize, dataTypes) => {
         fecha_creacion: {
             type: dataTypes.DATE
         },
-        
+        usuario_id: {
+            type: dataTypes.INTEGER
+        },
+        productos_id: {
+            type: dataTypes.INTEGER
+        },
 
     }, {
        tableName: "comentarios",
