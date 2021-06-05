@@ -31,7 +31,7 @@ module.exports ={
     registerpost:(req,res) => {
         let password = bcrypt.hashSync(req.body.password)
         db.Usuario.create({
-            // nombre: req.body.nombre,
+            usuario: req.body.usuario,
             mail: req.body.email,
             contraseña: password,
             fecha_nacimiento: req.body.fecha_de_nacimiento,
