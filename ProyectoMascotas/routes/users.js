@@ -21,6 +21,8 @@ router.get('/profile', userController.profile)
 
 router.get('/profile-edit', userController.edit)
 
+router.get('/logout', userController.logout);
+
 
 
 module.exports = router;
