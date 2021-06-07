@@ -8,12 +8,11 @@ module.exports ={
     login:(req,res) => {
         res.render('login', {title:"Login Page"})
     },
-    
+
     register:(req,res) => {
         res.render('register', {title:"Register yourself"})
     },
 
-// chequear esto
     profile:(req,res) => {
         let filtro = {
             limit: 8
@@ -39,8 +38,16 @@ module.exports ={
         .then(Usuario=>{
             res.redirect('/')
 
-        })
+        })    
     },
+    loginValidate: (req, res) => {
+        // Filtramos el usuario a traves de un campo que sea UNICO en la base de datos
+        const filtro = {
+            where: {
+                name: req.body.name
+            }
+        }}
 
+    
     
 };
