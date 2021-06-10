@@ -8,17 +8,15 @@ module.exports ={
     login:(req,res) => {
         res.render('login', {title:"Login Page"})
     },
-    
+
     register:(req,res) => {
         res.render('register', {title:"Register yourself"})
     },
 
-// chequear esto
     profile:(req,res) => {
         let filtro = {
             limit: 8
         }
-     
       db.Producto.findAll(filtro).then(resultado => {
       res.render('profile', {productos: resultado});
       });
@@ -39,8 +37,35 @@ module.exports ={
         .then(Usuario=>{
             res.redirect('/')
 
-        })
+        })    
+    },
+    loginValidate: (req, res) => {
+        // Filtramos el usuario a traves de un campo que sea UNICO en la base de datos
+        const filtro = {
+            where: {
+                name: req.body.name
+            }
+        }
+        // Buscamos un usuario unico
+        db.Usuario.findOne(filtro).then(usuario => {
+        // Comparamos la password ingresada en el login (req.body.pass)
+        // con la que ingresada en el registro (usuario.pass)
+        if(bcrypt.compareSync(req.body.pass, usuario.pass)){
+                req.session.usuario = usuario.name;
+        if(req.body.remember){
+            res.cookie('userId', usuario.id, { maxAge: 1000 * 60 * 5 });
+                }
+            }
+            res.redirect('/');
+        });
+    
     },
 
-    
-};
+    logout: (req, res) => {
+        // Borramos la sesion del servidor
+        req.session.destroy();
+        // Eliminamos la cookie del cliente
+        res.clearCookie('userId');
+        res.redirect('/');
+
+}}

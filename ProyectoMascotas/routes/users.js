@@ -13,9 +13,16 @@ router.post('/register', userController.registerpost);
 router.get('/login', userController.login);
 //localhost:3000/login
 
+router.post('/login', userController.loginValidate);
+//localhost:3000/login
+
 router.get('/profile', userController.profile)
 //localhost:3000/profile
 
 router.get('/profile-edit', userController.edit)
+
+router.get('/logout', userController.logout);
+
+
 
 module.exports = router;
