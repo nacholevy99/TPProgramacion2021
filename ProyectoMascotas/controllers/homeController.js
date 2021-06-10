@@ -28,21 +28,23 @@ module.exports = {
     add: (req,res) => { 
         res.render('product-add', {productos: productos.list})},   
 
+
     results: (req,res) => { 
         const filtro = {
             where: {
                 nombre_producto: {[Op.like]:'%' + req.query.search + '%'}
             }
         }
-        if(req.params.buscar = true){
-
-        db.Producto.findAll(filtro).then(resultado => {
-            res.render('search-results', { buscar: resultado});
-        });
-        } else {
+        if(req.params.id == undefined){
             res.render('search-results', { buscar: "no se a encontrado el resultado"});
+    
+        } else {
+              
+            db.Producto.findAll(filtro).then(resultado => {
+                res.render('search-results', { buscar: resultado});
+            });
         }
-
+    
     },
 
     
