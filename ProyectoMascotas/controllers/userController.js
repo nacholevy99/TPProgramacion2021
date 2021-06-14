@@ -43,14 +43,14 @@ module.exports ={
         // Filtramos el usuario a traves de un campo que sea UNICO en la base de datos
         const filtro = {
             where: {
-                name: req.body.name
+                name: req.body.usuario,
             }
         }
         // Buscamos un usuario unico
         db.Usuario.findOne(filtro).then(usuario => {
         // Comparamos la password ingresada en el login (req.body.pass)
         // con la que ingresada en el registro (usuario.pass)
-        if(bcrypt.compareSync(req.body.pass, usuario.pass)){
+        if(bcrypt.compareSync(req.body.password, usuario.password)){
                 req.session.usuario = usuario.name;
         if(req.body.remember){
             res.cookie('userId', usuario.id, { maxAge: 1000 * 60 * 5 });
