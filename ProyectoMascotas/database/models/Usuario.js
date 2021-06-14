@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-     const ususario = sequelize.define('Usuario', {
+     const usuario = sequelize.define('Usuario', {
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -26,7 +26,8 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "usuarios",
         timestamps: false
     });
-    
-        return ususario;
+
+
+        return usuario;
      }
 

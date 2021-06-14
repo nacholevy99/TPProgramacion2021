@@ -35,15 +35,12 @@ module.exports = {
                 nombre_producto: {[Op.like]:'%' + req.query.search + '%'}
             }
         }
-        if(req.params.id == undefined){
-            res.render('search-results', { buscar: "no se a encontrado el resultado"});
-    
-        } else {
+
               
             db.Producto.findAll(filtro).then(resultado => {
                 res.render('search-results', { buscar: resultado});
             });
-        }
+        
     
     },
 

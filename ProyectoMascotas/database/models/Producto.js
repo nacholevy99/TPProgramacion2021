@@ -27,16 +27,13 @@ module.exports = (sequelize, dataTypes) => {
        timestamps: false
    });
 
-   // Clase 31/5 (re chequear)
- //  Producto.associate = (db) => {
- //           Producto.belongsTo(db.Usuario, {
- //               as: '',             foreginKey: ''
- //          });
- //           
- //     
-//
-//   };
-//    
-  
+   producto.associate = (db) => {
+    producto.belongsTo(db.Usuario, {
+        as: 'usuario',
+        foreignKey: 'usuarios_id'
+    });
+
+};
+
       return producto;
     }

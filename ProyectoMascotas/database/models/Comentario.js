@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         fecha_creacion: {
             type: dataTypes.DATE
         },
-        usuario_id: {
+        usuarios_id: {
             type: dataTypes.INTEGER
         },
         productos_id: {
@@ -23,6 +23,18 @@ module.exports = (sequelize, dataTypes) => {
        tableName: "comentarios",
        timestamps: false
    });
+
+   comentario.associate = (db) => {
+    comentario.belongsTo(db.Usuario, {
+        as: 'usuario',
+        foreignKey: 'usuarios_id'
+    });
+    comentario.belongsTo(db.Producto, {
+        as: 'producto',
+        foreignKey: 'productos_id'
+    });
+
+};
    
        return comentario;
     }
