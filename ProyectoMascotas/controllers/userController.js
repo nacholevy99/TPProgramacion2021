@@ -50,8 +50,8 @@ module.exports ={
         db.Usuario.findOne(filtro).then(usuario => {
         // Comparamos la password ingresada en el login (req.body.pass)
         // con la que ingresada en el registro (usuario.pass)
-        if(bcrypt.compareSync(req.body.password, usuario.password)){
-                req.session.usuario = usuario.name;
+        if(bcrypt.compareSync(req.body.contraseña, usuario.contraseña)){
+                req.session.usuario = usuario.usuario;
         if(req.body.remember){
             res.cookie('userId', usuario.id, { maxAge: 1000 * 60 * 5 });
                 }
