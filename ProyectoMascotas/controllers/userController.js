@@ -56,7 +56,7 @@ module.exports ={
             res.cookie('userId', usuario.id, { maxAge: 1000 * 60 * 5 });
                 }
             }
-            res.redirect('/');
+            res.redirect('/'); // Me tiene que llevar con el header logeado
         });
     
     },
