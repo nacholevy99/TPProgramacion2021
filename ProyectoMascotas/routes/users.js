@@ -21,7 +21,7 @@ router.get('/profile', userController.profile)
 
 router.get('/profile-edit', userController.edit)
 
-router.get('/logout', userController.logout);
+router.post('/logout', userController.logout);
 
 
 

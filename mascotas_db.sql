@@ -7,7 +7,7 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 usuario VARCHAR(300),
 mail VARCHAR(300) ,
 contraseña VARCHAR(300) ,
-fecha_nacimiento DATE ,
+fecha DATE ,
 edad INT
 );
 

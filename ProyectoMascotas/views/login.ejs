@@ -16,7 +16,7 @@
 			<h2 class="col-12">
 			   <div class="uk-container">
 				<div class="uk-section uk-section-large">
-				  <form id="formLogin" method="GET" class="uk-background-secondary uk-padding uk-padding-large" action="/users/profile" >
+				  <form id="formLogin" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/login" >
 				  
 					<div class="uk-margin">
 						<label id="label" for="">E-mail</label>
@@ -32,12 +32,18 @@
 					<div class="uk-inline">
 					<span class="uk-form-icon" uk-icon="icon: lock"></span>
 					<input class="uk-input uk-form-width-large" type="password" name="password">
+
 					</div>
 					  </div>
 					  </div>
 					  <br>
 				</div>	
-		</div>		  
+		</div>	
+		
+			<% if (error) { %>
+			 <p> <%= error %>  </p>
+			<% } %>
+		
 					<div class= "botones-form">
 						  <input class="button button2" type="submit" value="Ingresar">
 					 	 <input class="button button2" type="submit" value="Cancelar">

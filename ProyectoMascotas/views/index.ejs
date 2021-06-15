@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<%- include('partials/head.ejs') %>
+	<%- include('partials/head') %>
 <body>
 
-	<%- include('partials/header.ejs') %>
 
+	<% if (logueado) { %>
+		<%- include('partials/headerLogueado') %>
+
+	<% } else { %> 
+		<%- include('partials/header') %>
+	<% } %>
+
+
+	
 	
 <!--Slider-->
 	<div id="slider">
