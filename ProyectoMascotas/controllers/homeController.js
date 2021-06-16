@@ -8,25 +8,32 @@ module.exports = {
     index: (req,res) => {
        
         let filtro = {
-            where: [
-                { fecha_creacion: {[Op.gte] : 2020}}
+            order: [
+                ['fecha_creacion', 'DESC'],
+            ],
+            include: [
+                {association: 'usuario'}
             ],
             limit: 4
-          }
+        }
        
         db.Producto.findAll(filtro).then(resultado => {
         res.render('index', {producto: resultado});
         });
         
         let filtro2 = {
-            where: [
-                { fecha_creacion: {[Op.gte] : 2021}}
+            order: [
+                ['fecha_creacion', 'ASC'],
+            ],
+            include: [
+                {association: 'usuario'}
             ],
             limit: 4
-          }
-          db.Producto.findAll(filtro2).then(resultados => {
-            res.render('index', {producto2: resultados});
-            });  
+        }
+       
+        db.Producto.findAll(filtro2).then(resultado2 => {
+        res.render('index', {producto2: resultado2});
+        });
     },
 
     productos: (req,res) => { 
