@@ -7,13 +7,26 @@ module.exports = {
     
     index: (req,res) => {
        
-          let filtro = {
-              limit: 4
+        let filtro = {
+            where: [
+                { fecha_creacion: {[Op.gte] : 2020}}
+            ],
+            limit: 4
           }
        
         db.Producto.findAll(filtro).then(resultado => {
-        res.render('index', {productos: resultado});
+        res.render('index', {producto: resultado});
         });
+        
+        let filtro2 = {
+            where: [
+                { fecha_creacion: {[Op.gte] : 2021}}
+            ],
+            limit: 4
+          }
+          db.Producto.findAll(filtro2).then(resultados => {
+            res.render('index', {producto2: resultados});
+            });  
     },
 
     productos: (req,res) => { 
