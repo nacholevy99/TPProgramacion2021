@@ -36,13 +36,15 @@
 				<ul class="right-navbar">
 					
 					<li><a href="/users/profile">
-							Juan López <i class="fas fa-user"></i>
+							<%= miUsuario.usuario %>  <i class="fas fa-user"></i>
 						</a>
 					</li>
 
-					<li><a href="/">
-							Cerrar sesión <i class="fas fa-sign-out-alt"></i>
-							</a>
+					<li> <form action="/users/logout" method="post">
+                        <button class="logout" type="submit">
+                            Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </form>
 					</li>	
 					</ul>
 
