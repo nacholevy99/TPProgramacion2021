@@ -19,9 +19,11 @@ router.post('/login', userController.loginValidate);
 router.get('/profile/:id', userController.profile)
 //localhost:3000/profile
 
-router.get('/profile-edit', userController.edit)
+router.get('/profile-edit/:id', userController.edit)
 
 router.post('/logout', userController.logout);
+
+router.post('/profile-edit', userController.update)
 
 
 
