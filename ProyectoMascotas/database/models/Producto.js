@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, dataTypes) => {
 
-    const producto = sequelize.define('Producto', {
+    const Producto = sequelize.define('Producto', {
        id: {
            autoIncrement: true,
            primaryKey: true,
@@ -22,18 +22,27 @@ module.exports = (sequelize, dataTypes) => {
         usuarios_id: {
             type: dataTypes.INTEGER
         },
+        createdAt:{
+            type:dataTypes.DATE
+        },
+        updatedAt:{
+            type:dataTypes.DATE
+        },
     }, {
        tableName: "productos",
-       timestamps: false
    });
 
-   producto.associate = (db) => {
-    producto.belongsTo(db.Usuario, {
+   Producto.associate = (db) => {
+    Producto.belongsTo(db.Usuario, {
         as: 'usuario',
         foreignKey: 'usuarios_id'
     });
+    Producto.hasMany(db.Comentario, {
+        as:"comentarios",
+        foreignKey:"productos_id"
+    })
 
 };
 
-      return producto;
+      return Producto;
     }

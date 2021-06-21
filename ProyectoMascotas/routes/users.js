@@ -16,7 +16,7 @@ router.get('/login', userController.login);
 router.post('/login', userController.loginValidate);
 //localhost:3000/login
 
-router.get('/profile', userController.profile)
+router.get('/profile/:id', userController.profile)
 //localhost:3000/profile
 
 router.get('/profile-edit', userController.edit)

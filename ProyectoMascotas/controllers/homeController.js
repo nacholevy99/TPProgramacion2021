@@ -4,65 +4,79 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
 
-    
-    index: (req,res) => {
-       
+
+    index: (req, res) => {
+
         let filtro = {
             order: [
                 ['fecha_creacion', 'DESC'],
             ],
-            include: [
-                {association: 'usuario'}
-            ],
+            include: [{
+                association: 'usuario'
+            }],
             limit: 4
         }
-       
-        db.Producto.findAll(filtro).then(resultado => {
-        res.render('index', {producto: resultado});
-        });
-        
         let filtro2 = {
             order: [
                 ['fecha_creacion', 'ASC'],
             ],
-            include: [
-                {association: 'usuario'}
-            ],
+            include: [{
+                association: 'usuario'
+            }],
             limit: 4
         }
-       
-        db.Producto.findAll(filtro2).then(resultado2 => {
-        res.render('index', {producto2: resultado2});
+
+        db.Producto.findAll(filtro).then(resultado => {
+
+            db.Producto.findAll(filtro2).then(resultado2 => {
+                res.render('index', {
+                    producto2: resultado2,
+                    producto: resultado
+                });
+            });
+        });
+
+
+
+
+    },
+
+    productos: (req, res) => {
+
+        let idproducto = req.params.id;
+
+        db.Producto.findByPk(idproducto).then(resultado => {
+            res.render('productos', {
+                lista: resultado
+            });
         });
     },
 
-    productos: (req,res) => { 
-
-        let idproducto = req.params.id;     
-
-        db.Producto.findByPk(idproducto).then(resultado => {
-            res.render('productos', { lista: resultado});
-        });
-     },
-
-    add: (req,res) => { 
-        res.render('product-add', {productos: productos.list})},   
+    add: (req, res) => {
+        res.render('product-add', {
+            productos: productos.list
+        })
+    },
 
 
-    results: (req,res) => { 
+    results: (req, res) => {
         const filtro = {
             where: {
-                nombre_producto: {[Op.like]:'%' + req.query.search + '%'}
+                nombre_producto: {
+                    [Op.like]: '%' + req.query.search + '%'
+                }
             }
         }
 
-              
-            db.Producto.findAll(filtro).then(resultado => {
-                res.render('search-results', { buscar: resultado});
+
+        db.Producto.findAll(filtro).then(resultado => {
+            res.render('search-results', {
+                buscar: resultado
             });
-        
-    
+        });
+
+
     },
 
-    
- }
+
+}

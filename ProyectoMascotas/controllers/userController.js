@@ -19,12 +19,20 @@ module.exports ={
     },
 
     profile:(req,res) => {
-        let filtro = {
-            limit: 8
-        }
-      db.Producto.findAll(filtro).then(resultado => {
-      res.render('profile', {productos: resultado});
-      });
+    db.Usuario.findByPk(req.params.id,{
+        include:[{
+            association:'productos',
+            include:{
+                association:'comentarios'
+            }
+        },{
+            association:'comentarios'
+        }]
+    }).then(usuario =>{   
+      res.render('profile', {usuario: usuario}); 
+    })
+        
+    
     },
 
     edit:(req,res) => {
