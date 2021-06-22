@@ -41,19 +41,19 @@ FOREIGN KEY (productos_id) REFERENCES productos (id)
 
 
 INSERT INTO usuarios 
-VALUES (DEFAULT, "joacolopez_", "juanlopez@gmail.com", "juanlopez1223", "1992-06-17", 27,"juan-lopez.jpeg", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "juan_lopez_", "juanlopez@gmail.com", "juanlopez1223", "1992-06-17", 27,"juan-lopez.jpeg", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
-VALUES (DEFAULT, "m_vanderusten", "mvanderusten@udesa.edu.ar","mvander1202","1997-01-12",24,"juan-lopez.jpeg", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "m_vanderusten", "mvanderusten@udesa.edu.ar","mvander1201","1997-01-12",24,"juan-lopez.jpeg", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
-VALUES (DEFAULT, "santi_lemo", "slemoine@udesa.edu.ar","slemo0509","1999-09-05",21,"juan-lopez.jpeg", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "santi_lemo", "slemoine@udesa.edu.ar","slemo0509","1999-09-05",21,"santi-lemoine.png", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
-VALUES (DEFAULT, "ilevi", "ilevy@udesa.edu.ar","ilevy0607","1997-07-06",22,"juan-lopez.jpeg", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "ilevi", "ilevy@udesa.edu.ar","ilevy0607","1997-07-06",22,"nacho-levy.jpg", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
-VALUES (DEFAULT, "finardi.FJ", "fjfinardi@udesa.edu.ar","franfi","1992-06-07",27,"juan-lopez.jpeg", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "finardi.FJ", "fjfinardi@udesa.edu.ar","franfi","1992-06-07",27,"fran-finardi.JPG", DEFAULT, DEFAULT);
 
 SELECT * FROM usuarios;
 
