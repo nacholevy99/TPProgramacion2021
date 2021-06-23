@@ -24,11 +24,10 @@
 				<p class="product-detail-description">
 					<a href="/modificar/<%= lista.id %>"><i class="fas fa-cogs"></i></a>
 				</p>
-		    <% } else { %> 
-				<%-  %>
-			<% } %>
+		    <% } %> 
+				
 			<% if (logueado) { %>
-			<form action="/borrar" method="POST">
+			<form action="/borrar" method="POST" class="product-detail-description">
 				<input type="hidden" name="id" value="<%= lista.id %>">
 				<input type="submit" value="Borrar">
 			  </form>
@@ -38,6 +37,7 @@
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= lista.url%>" alt="" class="product-detail-img">
+					<p class="product-detail-description"><%= lista.usuario.usuario%></p>
 					<p class="product-detail-description"><%= lista.descripcion%></p>
 				</article>
 				<div class="col-12 col-lg-4">

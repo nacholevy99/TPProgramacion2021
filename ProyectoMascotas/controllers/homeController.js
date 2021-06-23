@@ -47,11 +47,14 @@ module.exports = {
 
     productos: (req,res) => { 
         let filtro = {
-             include:[
-                 {association:'comentarios', 
-                 include: [{ 
-                    association: 'usuario'}]
-         }],
+            include: [{
+                association: 'comentarios',
+                include: {
+                    association: 'usuario'
+                }
+            }, {
+                association: 'usuario'
+            }],
         } 
         let filtro2 = {
             include: [{
@@ -106,7 +109,7 @@ module.exports = {
                 id: req.body.id
             }
         }).then(() => {
-            res.redirect('/index');
+            res.redirect('/');
         });
     },
 
@@ -115,7 +118,7 @@ module.exports = {
             comentario: req.body.comentario,
             id_producto: req.params.id,
             id_usuario: req.session.idUsuario
-            
+
         }).then(comentarioCreado => {
             res.redirect('/productos/' + comentarioCreado.id);
         });
