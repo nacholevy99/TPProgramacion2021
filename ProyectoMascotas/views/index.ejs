@@ -43,8 +43,8 @@
 						<article class="product-box_data">
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion %></p> 
-							<p>Comentarios:<%= element.comentarios.length %> </p>
-							<p><%= element.usuario.usuario %></p>
+							<p>Comentarios: <%= element.comentarios.length %> </p>
+							<a  class="link" href="/users/profile/<%= element.usuario.id%>"> <p class="userDetail">Usuario: <%= element.usuario.usuario%></p> </a>
 						</article>
 					</a>
 				</section>
@@ -72,7 +72,7 @@
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion%></p>
 							<p>Comentarios:<%= element.comentarios.length %> </p>
-							<p><%= element.usuario.usuario %></p>
+							<a  class="link" href="/users/profile/<%= element.usuario.id%>"> <p class="userDetail">Usuario: <%= element.usuario.usuario%></p> </a>
 						</article>
 					</a>
 				</section>

@@ -295,6 +295,14 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+.link {
+  margin-top: -9px;
+}
+
+.userDetail{
+  height: 36px;
+    margin-top: 24px;
+}
 
 /*====== Footer ======*/
 .footer {

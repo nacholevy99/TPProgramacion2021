@@ -37,8 +37,8 @@
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="<%= lista.url%>" alt="" class="product-detail-img">
-					<p class="product-detail-description"><%= lista.usuario.usuario%></p>
 					<p class="product-detail-description"><%= lista.descripcion%></p>
+					<a href="/users/profile/<%= lista.usuario.id%>"> <p class="product-detail-description"><%= lista.usuario.usuario%></p> </a>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -53,10 +53,19 @@
 						</article>
 						<% }) %>
 					</section>
+					<% if (logueado) { %>
+						  
 					<form class="form" action="/productos/<%= lista.id %>" method="POST" >
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentarioCreado">
 						<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
 					</form>
+					
+					<% } else { %> 
+						<form class="form" action="/users/register" method="GET" >
+							<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="">
+							<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
+						</form>
+					<% } %>    
 					<hr>
 				</div>
 			</div>

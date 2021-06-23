@@ -15,17 +15,17 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h1 id= "titulo"> <span>Editá tus datos</span></h1>
+				<h1 id= "titulo"> <span>Editar Producto</span></h1>
 			</div>
 
 	<h2 class="col-12"> 			
 			<div class= "flex-container">
-			<form action="/productos/<%= lista.id%>" method="POST">
+			<form action="/productos/<%=  lista.id %>" method="POST">
 				<div class="uk-margin">
 					<label id="label" for="">Nombre</label>
 					<br>
 					<div class="uk-inline">  
-					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<span class="uk-form-icon" ></span>
 					<input class="uk-input uk-form-width-large" type="text" name="nombre" value="<%=  lista.nombre_producto %> " required>
 					</div>
 				</div>
@@ -33,7 +33,7 @@
 					<label id="label" for="">Imagen</label>
 					<br>
 					<div class="uk-inline">
-					<span class="uk-form-icon" uk-icon="icon: mail"></span>
+					<span class="uk-form-icon" ></span>
 					<input class="uk-input uk-form-width-large" type="text" name="imagen"value="<%= lista.url %> " required>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 				<label id="label" for="">Descripcion</label>
 					<br>
 					<div class="uk-inline">
-					<span class="uk-form-icon" uk-icon="icon: mail"></span>
+					<span class="uk-form-icon" ></span>
 					<input class="uk-input uk-form-width-large" type="text" name="descripcion"value="<%= lista.descripcion %> " required>
 					</div>
 			</div>

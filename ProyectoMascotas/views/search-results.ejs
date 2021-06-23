@@ -6,7 +6,12 @@
 <body>
 	
 
-	<%- include('partials/header.ejs') %>
+	<% if (logueado) { %>
+		<%- include('partials/headerLogueado') %>
+
+	<% } else { %> 
+		<%- include('partials/header') %>
+	<% } %>    
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
@@ -22,7 +27,8 @@
 						<article class="product-box_data">
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion %></p>
-							<a class= "link" href="/users/profile/<%= element.usuario.id%>"><p><%= element.usuario.usuario %></p></p></a>
+							<p>Comentarios:<%= element.comentarios.length %> </p>
+							<a  class="link" href="/users/profile/<%= element.usuario.id%>"> <p class="userDetail">Usuario: <%= element.usuario.usuario%></p> </a>
 						</article>
 					</a>
 				</section>
@@ -39,7 +45,8 @@
 							<article class="product-box_data">
 								<h2><%= element.nombre_producto %></h2>
 								<p><%= element.descripcion %></p>
-								<a class= "link" href="/users/profile/<%= element.usuario.id%>"><p><%= element.usuario.usuario %></p></p></a>
+								<p>Comentarios:<%= element.comentarios.length %> </p>
+								<a  class="link" href="/users/profile/<%= element.usuario.id%>"> <p class="userDetail">Usuario: <%= element.usuario.usuario%></p> </a>
 							</article>
 						</a>
 					</section>
