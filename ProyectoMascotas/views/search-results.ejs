@@ -29,6 +29,23 @@
 			</div>
 	
 			<% }) %>
+			<% buscar2.forEach(element => {%>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/productos/<%= element.id%>"> 
+							<figure class="product-box_image">
+								<img src="<%= element.url %>" alt="producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= element.nombre_producto %></h2>
+								<p><%= element.descripcion %></p>
+								<a class= "link" href="/users/profile/<%= element.usuario.id%>"><p><%= element.usuario.usuario %></p></p></a>
+							</article>
+						</a>
+					</section>
+				</div>
+		
+				<% }) %>
 		</div>
 	</div>
 	

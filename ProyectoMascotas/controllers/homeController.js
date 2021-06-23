@@ -84,6 +84,8 @@ module.exports = {
 
 
     results: (req,res) => { 
+        
+        
         const filtro = {
             where: {
                 nombre_producto: {[Op.like]:'%' + req.query.search + '%'},
@@ -120,5 +122,5 @@ module.exports = {
         });
      }
 
-    
+     
  }
