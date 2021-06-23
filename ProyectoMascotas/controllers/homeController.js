@@ -78,6 +78,50 @@ module.exports = {
 
     },
 
+    modificar: (req,res) => { 
+        db.Producto.findByPk(req.params.id).then(resultado => {
+            res.render('modificar', { lista: resultado});
+        });
+    },
+
+    modificar2:  (req,res) => { 
+        filtro = {
+            where: {
+                id: req.body.id,
+            },
+            url: req.body.imagen,
+            nombre_producto: req.body.nombre,
+            descripcion: req.body.descripcion,
+
+        },
+
+        db.Producto.update(filtro).then(() => {
+        res.redirect('/producto/id');
+    });  
+    },
+
+    borrar: (req, res) => {
+        db.Producto.destroy({
+            where: {
+                id: req.body.id
+            }
+        }).then(() => {
+            res.redirect('/index');
+        });
+    },
+
+    crear: (req, res) => {
+        db.Comentario.create({
+            comentario: req.body.comentario,
+            id_producto: req.params.id,
+            id_usuario: req.session.idUsuario
+            
+        }).then(comentarioCreado => {
+            res.redirect('/productos/' + comentarioCreado.id);
+        });
+    },
+
+
 
     add: (req,res) => { 
         res.render('product-add', {productos: productos.list})},   

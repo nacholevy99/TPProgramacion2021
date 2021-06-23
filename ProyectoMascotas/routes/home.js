@@ -15,4 +15,13 @@ router.get('/product-add', homeController.add);
 router.get('/search-results', homeController.results)
 //localhost:3000/search-results
 
+router.get('/modificar/:id', homeController.modificar);
+//localhost:3000/modificar
+
+router.post('/modificar', homeController.modificar2);
+
+router.post('/borrar', homeController.borrar);
+
+router.post('/productos/:id', homeController.crear);
+
 module.exports = router;
