@@ -52,9 +52,11 @@ module.exports = {
     productos: (req,res) => { 
          let filtro = {
              include:[
-                 {association:'comentarios', include: 'usuario'}
-             ]
-         }
+                 {association:'comentarios', 
+                 include: [{ 
+                    association: 'usuario'}]
+         }],
+        } 
 
         db.Producto.findByPk(req.params.id, filtro).then(resultado => {
             res.render('productos', { lista: resultado});
