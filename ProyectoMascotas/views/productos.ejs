@@ -24,16 +24,16 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-                        <% for (let index = 0; index < 5; index++) { %>
+                        <% lista2.forEach(element => { %>
 						<article>
-							<img src= "images/users/logousuario.png" alt="">
+							<img src= "/images/users/<%= element.usuario.url %>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/users/profile"><%= %>: </a> </strong>
-									<%= %>.</p>
+									<strong> <a href="/users/profile/<%= element.usuario.id%>"><%= element.usuario.usuario %>: </a> </strong>
+									<%= element.comentario%>.</p>
 							</div>
 						</article>
-						<% } %>
+						<% }) %>
 					</section>
 					<form class="form" action="/productos" method="POST" >
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
