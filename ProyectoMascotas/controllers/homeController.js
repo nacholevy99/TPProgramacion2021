@@ -117,6 +117,7 @@ module.exports = {
         db.Comentario.create({
             comentario: req.body.comentario,
             id_producto: req.params.id,
+            
             id_usuario: req.session.idUsuario
 
         }).then(comentarioCreado => {
