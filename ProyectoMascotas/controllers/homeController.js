@@ -21,12 +21,6 @@ module.exports = {
             }],
             limit: 4
         }
-       
-        db.Producto.findAll(filtro).then(resultado => {
-        res.render('index', {producto: resultado});
-        });
-        
-       
         let filtro2 = {
             order: [
                 ['fecha_creacion', 'ASC'],
@@ -42,9 +36,11 @@ module.exports = {
             limit: 4
         }
        
-        db.Producto.findAll(filtro2).then(resultado => {
-        res.render('index', {producto2: resultado});
+        db.Producto.findAll(filtro).then(resultado => {
+            db.Producto.findAll(filtro2).then(resultado2 => {
+        res.render('index', {producto: resultado, producto2: resultado2});
         });
+    });
         
     },
     
@@ -75,17 +71,37 @@ module.exports = {
             where: {
                 nombre_producto: {[Op.like]:'%' + req.query.search + '%'},
             },
-            include: [
-                {association: 'usuario'}
-            ],
+            include: [{
+                association: 'usuario',
+                include: {
+                    association: 'comentarios'
+                }
+            }, {
+                association: 'comentarios'
+            }],
+        }
+        let filtro2 = {
+            where: {
+                descripcion: {[Op.like]:'%' + req.query.search + '%'},
+            },
+            include: [{
+                association: 'usuario',
+                include: {
+                    association: 'comentarios'
+                }
+            }, {
+                association: 'comentarios'
+            }],
         }
         
             db.Producto.findAll(filtro).then(resultado => {
-                res.render('search-results', { buscar: resultado});
+                db.Producto.findAll(filtro2).then(resultado2 => {
+                res.render('search-results', { buscar: resultado, buscar2: resultado2});
             });
         
     
-    },
+        });
+     }
 
     
  }

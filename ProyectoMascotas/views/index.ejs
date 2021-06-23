@@ -61,7 +61,7 @@
 				<h2 class="products-title">Más Antiguos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% producto.forEach(element => {%>
+			<% producto2.forEach(element => {%>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
 					<a href="/productos/<%= element.id%>">
@@ -71,7 +71,6 @@
 						<article class="product-box_data">
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion%></p>
-							<p>Comentarios: 12</p>
 							<p>Comentarios:<%= element.comentarios.length %> </p>
 							<p><%= element.usuario.usuario %></p>
 						</article>
