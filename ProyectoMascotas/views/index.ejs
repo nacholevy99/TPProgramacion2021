@@ -43,8 +43,8 @@
 						<article class="product-box_data">
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion %></p> 
-							<p>Comentarios: 3</p>
-							<p><%= element.usuario %></p>
+							<p>Comentarios:<%= element.comentarios.length %> </p>
+							<p><%= element.usuario.usuario %></p>
 						</article>
 					</a>
 				</section>
@@ -58,7 +58,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
+				<h2 class="products-title">Más Antiguos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<% producto.forEach(element => {%>
@@ -72,7 +72,8 @@
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion%></p>
 							<p>Comentarios: 12</p>
-							<p><%= element.usuario %></p>
+							<p>Comentarios:<%= element.comentarios.length %> </p>
+							<p><%= element.usuario.usuario %></p>
 						</article>
 					</a>
 				</section>

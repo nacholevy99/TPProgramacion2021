@@ -24,7 +24,7 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-                        <% for (let index = 0; index < 5; index++) { %>
+                        <% for (let index = 0; index < lista.comentarios[i].length; index++) { %>
 						<article>
 							<img src= "images/users/logousuario.png" alt="">
 							<div class="data">
@@ -35,8 +35,8 @@
 						</article>
 						<% } %>
 					</section>
-					<form class="form" action="/productos" method="GET" >
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/productos" method="POST" >
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
 						<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>
