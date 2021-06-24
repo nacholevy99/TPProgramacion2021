@@ -19,7 +19,7 @@
 			</div>
 
 	<h2 class="col-12"> 			
-			<div class= "flex-container">
+			<div class= "flex-container2">
 			<form action="/productos/<%=  lista.id %>" method="POST">
 				<div class="uk-margin">
 					<label id="label" for="">Nombre</label>
@@ -34,7 +34,9 @@
 					<br>
 					<div class="uk-inline">
 					<span class="uk-form-icon" ></span>
-					<input class="uk-input uk-form-width-large" type="text" name="imagen"value="<%= lista.url %> " required>
+					<form id="form"  action=""  method="POST" enctype="multipart/form-data" >
+						<input type="file"  name="archivo">
+					</form>
 					</div>
 				</div>
 			<div class="uk-margin">

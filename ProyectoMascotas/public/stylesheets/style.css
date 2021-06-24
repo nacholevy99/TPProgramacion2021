@@ -304,6 +304,12 @@ hr {
     margin-top: 24px;
 }
 
+.flex-container2{
+  justify-content: center;
+    background-color: #ebebeb;
+}
+
+
 /*====== Footer ======*/
 .footer {
   display: -ms-flexbox;

@@ -86,11 +86,12 @@ module.exports = {
     crear: (req, res) => {
         console.log(req.body)
         console.log(req.session)
+        console.log(req.params)
         db.Comentario.create({
 
             comentario: req.body.comentario,
-            id_producto: req.params.id, 
-            id_usuario: req.session.usuario.id
+            productos_id: req.params.id, 
+            usuarios_id: req.session.usuario.id
 
         }).then(comentarioCreado => {
             console.log(comentarioCreado)
