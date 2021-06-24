@@ -13,9 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         nombre_producto: {
             type: dataTypes.STRING
         },
-        fecha_creacion: {
-            type: dataTypes.DATE
-        },
+        
         descripcion: {
             type: dataTypes.STRING(1000)
         },

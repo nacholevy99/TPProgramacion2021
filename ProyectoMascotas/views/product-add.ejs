@@ -1,41 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+	
+	<%- include('partials/head') %>
 
-	<%- include('partials/head.ejs') %>
 <body>
 	
 
-	<%- include('partials/headerLogueado.ejs') %>
-
-
+	<%- include('partials/header') %>	
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Favoritos</h2>
+				<h1 id= "titulo"> <span>Editá tus datos</span></h1>
+			</div>
+
+	<h2 class="col-12"> 			
+			<div class= "flex-container">
+			<form action="/product-add" method="POST" enctype="multipart/form-data">
+				<div class="uk-margin">
+					<label id="label" for="">Nombre del producto</label>
+					<br>
+					<div class="uk-inline">  
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input uk-form-width-large" type="text" name="titulo" required>
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label id="label" for="">Descripcion</label>
+					<br>
+					<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: mail"></span>
+					<input class="uk-input uk-form-width-large" type="text" name="descripcion" required>
+					</div>
+				</div>
+			<div class="uk-margin">
+				<label id="label" for="">Imagen</label>
+				<br>
+				<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon: lock"></span>
+				<input class="uk-input uk-form-width-large" type="file" name="imagen">
+				</div>
+			
 			</div>
 			
-			<% productos.forEach(element => {%>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/productos">
-							<figure class="product-box_image">
-								<img src="<%= element.imagen%>" alt="cafetera moulinex">
-							</figure>
-							<article class="product-box_data">
-								<h2><%= element.name %></h2>
-								<p><%= element.descripcioncorta%></p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<% }) %>
-			
-		</div>
+					<div class="boton-save">
+						<input class="button button2" type="submit" value="Save">
+					</div>
+					<% if (error) { %>
+					<p style="color: red;"> <%= error %> </p>
+					</p>
+					
+					<% } %>
+
+			</form>	
+		</div>	
+	</h2>
 	</div>
-	<!-- /Novedades -->
-	
-   
-     <%- include('partials/footer.ejs') %>
+          
+
+	<!-- footer -->
+	<%- include('partials/footer.ejs') %>
+	<!-- /footer -->
+
 </body>
+
 </html>
