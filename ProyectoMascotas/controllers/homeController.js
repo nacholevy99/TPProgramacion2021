@@ -51,7 +51,10 @@ module.exports = {
                 association: 'comentarios',
                 include: {
                     association: 'usuario'
-                }
+                },
+                order: [
+                    ['createdAt', 'ASC'],
+                ],
             }, {
                 association: 'usuario'
             }],
@@ -59,17 +62,16 @@ module.exports = {
         let filtro2 = {
             include: [{
                 association: 'producto',
-                include: {
-                    association: 'usuario'
-                }
-            }, {
+                association: 'usuario',
+     
+            order: [
+                ['createdAt', 'DESC'],
+            ]},
+            {
                 association: 'usuario'
             }],
             
-        order: [
-            ['fecha_creacion', 'DESC'],
-        ],
-        limit: 7
+          limit: 10
        } 
 
 
@@ -79,6 +81,21 @@ module.exports = {
         });
     });
 
+    },
+
+    crear: (req, res) => {
+        console.log(req.body)
+        console.log(req.session)
+        db.Comentario.create({
+
+            comentario: req.body.comentario,
+            id_producto: req.params.id, 
+            id_usuario: req.session.usuario.id
+
+        }).then(comentarioCreado => {
+            console.log(comentarioCreado)
+            res.redirect('/productos/' + req.params.id );
+        });
     },
 
     modificar: (req,res) => { 
@@ -113,17 +130,6 @@ module.exports = {
         });
     },
 
-    crear: (req, res) => {
-        db.Comentario.create({
-            comentario: req.body.comentario,
-            id_producto: req.params.id,
-            
-            id_usuario: req.session.idUsuario
-
-        }).then(comentarioCreado => {
-            res.redirect('/productos/' + comentarioCreado.id);
-        });
-    },
 
 
 

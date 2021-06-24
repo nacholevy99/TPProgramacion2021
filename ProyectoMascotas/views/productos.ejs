@@ -56,6 +56,7 @@
 					<% if (logueado) { %>
 						  
 					<form class="form" action="/productos/<%= lista.id %>" method="POST" >
+						<input type="hidden" value="<%= lista.id %>" name="id_producto">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentarioCreado">
 						<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
 					</form>
