@@ -98,14 +98,14 @@ module.exports = {
             where: {
                 id: req.body.id,
             },
-            url: req.body.imagen,
+            url: req.body.archivo,
             nombre_producto: req.body.nombre,
             descripcion: req.body.descripcion,
 
         },
 
         db.Producto.update(filtro).then(() => {
-        res.redirect('/producto/id');
+        res.redirect('/producto/' + req.params.id);
     });  
     },
 

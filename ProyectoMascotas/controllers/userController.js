@@ -131,6 +131,7 @@ module.exports = {
                 mail: req.body.email,
                 contraseña: password,
                 fecha: req.body.fecha_de_nacimiento,
+          //    url: req.body.perfil
             })
             .then(Usuario => {
                 res.redirect('/')
