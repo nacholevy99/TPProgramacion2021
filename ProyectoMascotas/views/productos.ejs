@@ -20,13 +20,11 @@
 			<p class="product-detail-description">
 				<a href="/product-add"><i class="far fa-star"></i></a>
 			</p>
-			<% if (logueado) { %>
+			<% if (logueado && lista.usuario.id == lista.id) { %>
 				<p class="product-detail-description">
 					<a href="/modificar/<%= lista.id %>"><i class="fas fa-cogs"></i></a>
 				</p>
-		    <% } %> 
-				
-			<% if (logueado) { %>
+
 			<form action="/borrar" method="POST" class="product-detail-description">
 				<input type="hidden" name="id" value="<%= lista.id %>">
 				<input type="submit" value="Borrar">

@@ -37,7 +37,7 @@ router.get('/search-results', homeController.results)
 router.get('/modificar/:id', homeController.modificar);
 //localhost:3000/modificar
 
-router.post('/modificar', upload.single("archivo"), homeController.modificar2);
+router.post('/modificar', upload.single("imagen"), homeController.modificar2);
 
 router.post('/borrar', homeController.borrar);
 

@@ -66,10 +66,7 @@ module.exports = {
 
 
         db.Producto.findByPk(req.params.id, filtro).then(resultado => {
-
-            res.render('productos', {
-                lista: resultado
-            });
+            res.render('productos', {lista: resultado});
         });
 
 
@@ -92,28 +89,31 @@ module.exports = {
     },
 
     modificar: (req, res) => {
-        db.Producto.findByPk(req.params.id).then(resultado => {
+        db.Producto.findByPk(req.params.id).then(usuario => {
             res.render('modificar', {
-                modificar: resultado
+                usuario: usuario,
+                error: null
             });
         });
     },
 
     modificar2: (req, res) => {
-        filtro = {
-            where: {
-                id: req.body.id,
-            },
-            url: req.body.archivo,
-            nombre_producto: req.body.titulo,
+        
+            db.Producto.update({ 
+                
+            nombre_producto: req.body.nombre,
             descripcion: req.body.descripcion,
-
+            url: req.body.imagen,
+        }, { 
+            where:{
+                id: req.body.id
             },
-
-            db.Producto.update(filtro).then(() => {
-                res.redirect('/producto/' + req.params.id);
+            
+            }).then(productoModificado => {
+                res.redirect('/productos/' + req.body.id );
             });
-    },
+            },
+    
 
     borrar: (req, res) => {
         db.Producto.destroy({

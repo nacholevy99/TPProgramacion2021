@@ -11,7 +11,7 @@
 	<!-- Novedades -->
 	<h1 id="titulo"><span>Registrarse</span></h1>
     <div class="flex-container">
-		<form id="formRegister" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/register" >
+		<form id="formRegister" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/register" enctype="multipart/form-data >
 			<div class="uk-margin">
             <label id="label" for="">Nombre</label>
             <br>
@@ -39,13 +39,11 @@
             <br>
             <input class="uk-input uk-form-width-large" type="date" name="fecha_de_nacimiento">
         </div>
-  <!--  <div class="uk-margin">
+        <div class="uk-margin">
             <label id="label" for="">Foto de perfil</label>
             <br>
-            <form id="form"  action=""  method="POST" enctype="multipart/form-data" >
-                <input type="file"  name="perfil">
-            </form>
-        </div> -->
+            <input type="file"  name="foto">
+        </div> 
 
  </div>   
     <div class= "boton-registform">     
