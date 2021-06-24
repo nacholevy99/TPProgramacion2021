@@ -71,7 +71,7 @@ module.exports = {
                 association: 'usuario'
             }],
             
-          limit: 10
+          limit: 7
        } 
 
 
