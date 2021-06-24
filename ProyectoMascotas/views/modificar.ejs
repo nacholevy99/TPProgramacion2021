@@ -15,54 +15,48 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h1 id= "titulo"> <span>Editar Producto</span></h1>
+				<h1 id= "titulo"> <span>Editar producto</span></h1>
 			</div>
 
 	<h2 class="col-12"> 			
-			<div class= "flex-container2">
-			<form action="/productos/<%=  lista.id %>" method="POST">
+			<div class= "flex-container">
+			<form action="/productos/<%= modificar.id %>" method="POST" enctype="multipart/form-data">
 				<div class="uk-margin">
-					<label id="label" for="">Nombre</label>
+					<label id="label" for="">Nombre del producto</label>
 					<br>
 					<div class="uk-inline">  
-					<span class="uk-form-icon" ></span>
-					<input class="uk-input uk-form-width-large" type="text" name="nombre" value="<%=  lista.nombre_producto %> " required>
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					<input class="uk-input uk-form-width-large" type="text" name="titulo" required>
 					</div>
 				</div>
 				<div class="uk-margin">
-					<label id="label" for="">Imagen</label>
+					<label id="label" for="">Descripcion</label>
 					<br>
 					<div class="uk-inline">
-					<span class="uk-form-icon" ></span>
-					<form id="form"  action=""  method="POST" enctype="multipart/form-data" >
-						<input type="file"  name="archivo">
-					</form>
+					<span class="uk-form-icon" uk-icon="icon: mail"></span>
+					<input class="uk-input uk-form-width-large" type="text" name="descripcion" required>
 					</div>
 				</div>
 			<div class="uk-margin">
-				<label id="label" for="">Descripcion</label>
-					<br>
-					<div class="uk-inline">
-					<span class="uk-form-icon" ></span>
-					<input class="uk-input uk-form-width-large" type="text" name="descripcion"value="<%= lista.descripcion %> " required>
-					</div>
+				<label id="label" for="">Imagen</label>
+				<br>
+				<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon: lock"></span>
+				<input class="uk-input uk-form-width-large" type="file" name="archivo">
+				</div>
+			
 			</div>
 			
-			<br>
-			</div>
-			<input type="hidden" name="id" value="<%= lista.id %>">
 					<div class="boton-save">
 						<input class="button button2" type="submit" value="Save">
 					</div>
+					
 					
 
 			</form>	
 		</div>	
 	</h2>
 	</div>
-          
-
-
 
      <%- include('partials/footer.ejs') %>
 </body>

@@ -38,10 +38,7 @@ module.exports = {
 
         db.Producto.findAll(filtro).then(resultado => {
             db.Producto.findAll(filtro2).then(resultado2 => {
-                res.render('index', {
-                    producto: resultado,
-                    producto2: resultado2
-                });
+                res.render('index', {producto: resultado, producto2: resultado2});
             });
         });
 
@@ -97,7 +94,7 @@ module.exports = {
     modificar: (req, res) => {
         db.Producto.findByPk(req.params.id).then(resultado => {
             res.render('modificar', {
-                lista: resultado
+                modificar: resultado
             });
         });
     },
@@ -108,13 +105,13 @@ module.exports = {
                 id: req.body.id,
             },
             url: req.body.archivo,
-            nombre_producto: req.body.nombre,
+            nombre_producto: req.body.titulo,
             descripcion: req.body.descripcion,
 
             },
 
             db.Producto.update(filtro).then(() => {
-                res.redirect('/producto/id');
+                res.redirect('/producto/' + req.params.id);
             });
     },
 
