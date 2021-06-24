@@ -6,8 +6,12 @@
 <body>
 	
 
-	<%- include('partials/header') %>	
+	<% if (logueado) { %>
+		<%- include('partials/headerLogueado') %>
 
+	<% } else { %> 
+		<%- include('partials/header') %>
+	<% } %>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">

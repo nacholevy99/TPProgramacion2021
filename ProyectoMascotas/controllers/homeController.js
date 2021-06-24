@@ -52,34 +52,22 @@ module.exports = {
                 include: {
                     association: 'usuario'
                 },
-                order: [
-                    ['createdAt', 'ASC'],
-                ],
+                
             }, {
                 association: 'usuario'
             }],
-        } 
-        let filtro2 = {
-            include: [{
-                association: 'producto',
-                association: 'usuario',
-     
             order: [
-                ['createdAt', 'DESC'],
-            ]},
-            {
-                association: 'usuario'
-            }],
+                [[ 'comentarios', 'id', 'DESC' ]],
+            ],
             
-          limit: 7
-       } 
-
+        } 
+       
 
         db.Producto.findByPk(req.params.id, filtro).then(resultado => {
-            db.Comentario.findAll(filtro2).then(resultado2 => {
-            res.render('productos', { lista: resultado, lista2: resultado2});
+            
+            res.render('productos', { lista: resultado});
         });
-    });
+    
 
     },
 
