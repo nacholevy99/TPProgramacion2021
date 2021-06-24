@@ -9,9 +9,7 @@ module.exports = (sequelize, dataTypes) => {
         comentario: {
             type: dataTypes.STRING(1000)
         },
-        fecha_creacion: {
-            type: dataTypes.DATE
-        },
+
         usuarios_id: {
             type: dataTypes.INTEGER
         },
