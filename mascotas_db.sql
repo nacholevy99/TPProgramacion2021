@@ -45,10 +45,10 @@ INSERT INTO usuarios
 VALUES (DEFAULT, "Martina Vanderusten", "mvanderusten@udesa.edu.ar","mvander1201","1997-01-12",24,"martu-vanderusten.JPG", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
-VALUES (DEFAULT, "Santiago Lemoine", "slemoine@udesa.edu.ar","slemo0509","1999-09-05",21,"santi-lemoine.png", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "Santiago Lemoine", "slemoine@udesa.edu.ar","slemo","1999-09-05",21,"santi-lemoine.png", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
-VALUES (DEFAULT, "Ignacio Levy", "ilevy@udesa.edu.ar","ilevy0607","1997-07-06",22,"nacho-levy.jpg", DEFAULT, DEFAULT);
+VALUES (DEFAULT, "Ignacio Levy", "ilevy@udesa.edu.ar","ilevy","1997-07-06",22,"nacho-levy.jpg", DEFAULT, DEFAULT);
 
 INSERT INTO usuarios
 VALUES (DEFAULT, "Francisco Finardi", "fjfinardi@udesa.edu.ar","0706","1992-06-07",27,"fran-finardi.JPG", DEFAULT, DEFAULT);
