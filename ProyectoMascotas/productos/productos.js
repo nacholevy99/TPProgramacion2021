@@ -1,6 +1,5 @@
 const productos = {
-    list: [
-        {
+    list: [{
             id: 0,
             name: "Camitas Personalizadas",
             imagen: "/images/products/producto1.webp",
@@ -24,7 +23,7 @@ const productos = {
             imagen: "/images/products/producto4.webp",
             descripcioncorta: ["Barra nutritiva a base de harina de soja, maíz, trigo y minerales orgánicos."],
         },
-       
+
     ]
 }
 

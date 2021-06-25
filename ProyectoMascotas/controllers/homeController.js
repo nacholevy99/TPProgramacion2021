@@ -38,7 +38,10 @@ module.exports = {
 
         db.Producto.findAll(filtro).then(resultado => {
             db.Producto.findAll(filtro2).then(resultado2 => {
-                res.render('index', {producto: resultado, producto2: resultado2});
+                res.render('index', {
+                    producto: resultado,
+                    producto2: resultado2
+                });
             });
         });
 
@@ -66,7 +69,9 @@ module.exports = {
 
 
         db.Producto.findByPk(req.params.id, filtro).then(resultado => {
-            res.render('productos', {lista: resultado});
+            res.render('productos', {
+                lista: resultado
+            });
         });
 
 
@@ -98,22 +103,22 @@ module.exports = {
     },
 
     modificar2: (req, res) => {
-        
-            db.Producto.update({ 
-                
+
+        db.Producto.update({
+
             nombre_producto: req.body.nombre,
             descripcion: req.body.descripcion,
             url: req.body.imagen,
-        }, { 
-            where:{
+        }, {
+            where: {
                 id: req.body.id
             },
-            
-            }).then(productoModificado => {
-                res.redirect('/productos/' + req.body.id );
-            });
-            },
-    
+
+        }).then(productoModificado => {
+            res.redirect('/productos/' + req.body.id);
+        });
+    },
+
 
     borrar: (req, res) => {
         db.Producto.destroy({
@@ -133,7 +138,7 @@ module.exports = {
             res.render('product-add', {
                 error: null
             })
-        } else{
+        } else {
             res.redirect("/")
         }
     },
@@ -184,9 +189,9 @@ module.exports = {
         });
     },
     store: (req, res) => {
-        if(!req.body.titulo || !req.body.descripcion || !req.file){
-            res.render("product-add",{
-                error:"no puede haber campos vacios"
+        if (!req.body.titulo || !req.body.descripcion || !req.file) {
+            res.render("product-add", {
+                error: "no puede haber campos vacios"
             })
         }
         db.Producto.create({

@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<%- include('partials/head') %>
+<%- include('partials/head') %>
+
 <body>
 
 
 	<% if (logueado) { %>
-		<%- include('partials/headerLogueado') %>
+	<%- include('partials/headerLogueado') %>
 
-	<% } else { %> 
-		<%- include('partials/header') %>
+	<% } else { %>
+	<%- include('partials/header') %>
 	<% } %>
 
 
-	
-	
-<!--Slider-->
+
+
+	<!--Slider-->
 	<div id="slider">
 		<figure>
 			<img class="foto1" src="images/mundopetsbanner1.jpg">
@@ -36,21 +37,23 @@
 			<% producto.forEach(element => {%>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/productos/<%= element.id%>"> 
+					<a href="/productos/<%= element.id%>">
 						<figure class="product-box_image">
 							<img src="/images/products/<%= element.url%>" alt="producto">
 						</figure>
 						<article class="product-box_data">
 							<h2><%= element.nombre_producto %></h2>
-							<p><%= element.descripcion %></p> 
+							<p><%= element.descripcion %></p>
 							<p>Comentarios: <%= element.comentarios.length %> </p>
-							<a  class="link" href="/users/profile/<%= element.usuario.id%>"> <p class="userDetail">Usuario: <%= element.usuario.usuario%></p> </a>
+							<a class="link" href="/users/profile/<%= element.usuario.id%>">
+								<p class="userDetail">Usuario: <%= element.usuario.usuario%></p>
+							</a>
 						</article>
 					</a>
 				</section>
 			</div>
 			<% }) %>
-			
+
 		</div>
 	</div>
 	<!-- /Novedades -->
@@ -72,7 +75,9 @@
 							<h2><%= element.nombre_producto %></h2>
 							<p><%= element.descripcion%></p>
 							<p>Comentarios:<%= element.comentarios.length %> </p>
-							<a  class="link" href="/users/profile/<%= element.usuario.id%>"> <p class="userDetail">Usuario: <%= element.usuario.usuario%></p> </a>
+							<a class="link" href="/users/profile/<%= element.usuario.id%>">
+								<p class="userDetail">Usuario: <%= element.usuario.usuario%></p>
+							</a>
 						</article>
 					</a>
 				</section>
@@ -82,6 +87,7 @@
 	</div>
 	<!-- /Más comentados -->
 
-     <%- include('partials/footer.ejs') %>
+	<%- include('partials/footer.ejs') %>
 </body>
+
 </html>

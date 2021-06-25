@@ -67,7 +67,7 @@ module.exports = {
                         }
                     })
                     .then(Usuario => {
-                        res.redirect('/users/profile/'+req.body.id)
+                        res.redirect('/users/profile/' + req.body.id)
 
                     })
 
@@ -83,7 +83,7 @@ module.exports = {
                         }
                     })
                     .then(Usuario => {
-                        res.redirect('/users/profile/'+req.body.id)
+                        res.redirect('/users/profile/' + req.body.id)
 
                     })
             } else if (req.body.fecha && !req.body.password) {
@@ -97,7 +97,7 @@ module.exports = {
                         }
                     })
                     .then(Usuario => {
-                        res.redirect('/users/profile/'+req.body.id)
+                        res.redirect('/users/profile/' + req.body.id)
 
                     })
             } else {
@@ -110,15 +110,15 @@ module.exports = {
                         }
                     })
                     .then(Usuario => {
-                        res.redirect('/users/profile/'+req.body.id)
+                        res.redirect('/users/profile/' + req.body.id)
 
                     })
             }
 
 
-        }else{
-            res.render("profile-edit",{
-                error:"Estos campos no pueden estar vacios"
+        } else {
+            res.render("profile-edit", {
+                error: "Estos campos no pueden estar vacios"
             })
         }
 
@@ -159,11 +159,11 @@ module.exports = {
             } else {
                 res.render("login", {
                     title: "Login Page",
-                    error: "El mail o la contraseña son incorrectos"
+                    error: "E-mail o contraseña incorrectos"
                 })
 
             }
-            res.redirect('/'); // Me tiene que llevar con el header logeado
+            res.redirect('/'); // Me tiene que llevar con el header logueado
         });
 
     },

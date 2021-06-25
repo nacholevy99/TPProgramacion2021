@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<%- include('partials/head.ejs') %>
+<%- include('partials/head.ejs') %>
 
 
 <body>
-	
+
 
 	<% if (logueado) { %>
-		<%- include('partials/headerLogueado') %>
+	<%- include('partials/headerLogueado') %>
 
-	<% } else { %> 
-		<%- include('partials/header') %>
-	<% } %>    
-    <!-- product detail -->
+	<% } else { %>
+	<%- include('partials/header') %>
+	<% } %>
+	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= lista.nombre_producto %></h2> 
+			<h2 class="products-title"><%= lista.nombre_producto %></h2>
 			<p class="product-detail-description">
 				<a href="/product-add"><i class="far fa-star"></i></a>
 			</p>
 			<% if (logueado && lista.usuario.id == lista.id) { %>
-				<p class="product-detail-description">
-					<a href="/modificar/<%= lista.id %>"><i class="fas fa-cogs"></i></a>
-				</p>
+			<p class="product-detail-description">
+				<a href="/modificar/<%= lista.id %>"><i class="fas fa-cogs"></i></a>
+			</p>
 
 			<form action="/borrar" method="POST" class="product-detail-description">
 				<input type="hidden" name="id" value="<%= lista.id %>">
 				<input type="submit" value="Borrar">
-			  </form>
-			<% } %>  
+			</form>
+			<% } %>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="/images/products/<%= lista.url%>" alt="" class="product-detail-img">
 					<p class="product-detail-description"><%= lista.descripcion%></p>
-					<a href="/users/profile/<%= lista.usuario.id%>"> <p class="product-detail-description"><%= lista.usuario.usuario%></p> </a>
+					<a href="/users/profile/<%= lista.usuario.id%>">
+						<p class="product-detail-description"><%= lista.usuario.usuario%></p>
+					</a>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-                        <% lista.comentarios.forEach(element => { %>
+						<% lista.comentarios.forEach(element => { %>
 						<article>
-							<img src= "/images/users/<%= element.usuario.url %>" alt="">
+							<img src="/images/users/<%= element.usuario.url %>" alt="">
 							<div class="data">
 								<p class="user">
-									<strong> <a href="/users/profile/<%= element.usuario.id%>"><%= element.usuario.usuario %>: </a> </strong>
+									<strong> <a
+											href="/users/profile/<%= element.usuario.id%>"><%= element.usuario.usuario %>:
+										</a> </strong>
 									<%= element.comentario%>.</p>
 							</div>
 						</article>
 						<% }) %>
 					</section>
 					<% if (logueado) { %>
-						  
-					<form class="form" action="/productos/<%= lista.id %>" method="POST" >
+
+					<form class="form" action="/productos/<%= lista.id %>" method="POST">
 						<input type="hidden" value="<%= lista.id %>" name="id_producto">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario"
+							name="comentario">
 						<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
 					</form>
-					
-					<% } else { %> 
-						<form class="form" action="/users/register" method="GET" >
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="">
-							<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
-						</form>
-					<% } %>    
+
+					<% } else { %>
+					<form class="form" action="/users/register" method="GET">
+						<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="">
+						<button type="submit" class="btn-add">AGREGAR COMENTARIO</button>
+					</form>
+					<% } %>
 					<hr>
 				</div>
 			</div>
@@ -73,6 +78,7 @@
 	<!-- /product detail -->
 
 
-     <%- include('partials/footer.ejs') %>
+	<%- include('partials/footer.ejs') %>
 </body>
+
 </html>

@@ -37,20 +37,22 @@
 
 								</div>
 							</div>
-								<div class="uk-margin">
-									<label for="" id="label">Recordame</label>
-									<br>
-									<div class="uk-inline">
-										<input type="checkbox" name="remember" id="">
-									</div>
+							<div class="uk-margin">
+								<label for="" id="label">Recordame</label>
+								<br>
+								<div class="uk-inline">
+									<input type="checkbox" name="remember" id="">
 								</div>
+							</div>
 					</div>
 					<br>
 				</div>
 		</div>
 
 		<% if (error) { %>
-		<p> <%= error %> </p>
+		<div class="error-login">
+			<p> <%= error %> </p>
+		</div>
 		<% } %>
 
 		<div class="botones-form">

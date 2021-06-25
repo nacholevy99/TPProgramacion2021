@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-	
-	<%- include('partials/head') %>
+
+<%- include('partials/head') %>
 
 <body>
-	
 
-	<%- include('partials/header') %>	
+
+	<%- include('partials/header') %>
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h1 id= "titulo"> <span>Editá tus datos</span></h1>
+				<h1 id="titulo"> <span>Editá tus datos</span></h1>
 			</div>
 
-	<h2 class="col-12"> 			
-			<div class= "flex-container">
-			<form action="/users/profile-edit" method="POST">
-				<div class="uk-margin">
-					<label id="label" for="">Nombre</label>
-					<br>
-					<div class="uk-inline">  
-					<span class="uk-form-icon" uk-icon="icon: user"></span>
-					<input class="uk-input uk-form-width-large" type="text" name="nombre"value="<%= usuario.usuario %> " required>
-					</div>
+			<h2 class="col-12">
+				<div class="flex-container">
+					<form action="/users/profile-edit" method="POST">
+						<div class="uk-margin">
+							<label id="label" for="">Nombre</label>
+							<br>
+							<div class="uk-inline">
+								<span class="uk-form-icon" uk-icon="icon: user"></span>
+								<input class="uk-input uk-form-width-large" type="text" name="nombre"
+									value="<%= usuario.usuario %> " required>
+							</div>
+						</div>
+						<div class="uk-margin">
+							<label id="label" for="">E-mail</label>
+							<br>
+							<div class="uk-inline">
+								<span class="uk-form-icon" uk-icon="icon: mail"></span>
+								<input class="uk-input uk-form-width-large" type="email" name="email"
+									value="<%= usuario.mail %> " required>
+							</div>
+						</div>
+						<div class="uk-margin">
+							<label id="label" for="">Contraseña</label>
+							<br>
+							<div class="uk-inline">
+								<span class="uk-form-icon" uk-icon="icon: lock"></span>
+								<input class="uk-input uk-form-width-large" type="password" name="password">
+							</div>
+						</div>
+						<div class="uk-margin">
+							<label id="label" for="">Fecha de nacimiento</label>
+							<br>
+							<input class="uk-input uk-form-width-large" type="date" name="fecha"
+								value="<%= usuario.fecha %> ">
+						</div>
+						<br>
 				</div>
-				<div class="uk-margin">
-					<label id="label" for="">E-mail</label>
-					<br>
-					<div class="uk-inline">
-					<span class="uk-form-icon" uk-icon="icon: mail"></span>
-					<input class="uk-input uk-form-width-large" type="email" name="email"value="<%= usuario.mail %> " required>
-					</div>
+				<input type="hidden" name="id" value="<%= usuario.id %>">
+				<div class="boton-save">
+					<input class="button button2" type="submit" value="Save">
 				</div>
-			<div class="uk-margin">
-				<label id="label" for="">Contraseña</label>
-				<br>
-				<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: lock"></span>
-				<input class="uk-input uk-form-width-large" type="password" name="password">
-				</div>
-			</div>
-			<div class="uk-margin">
-				<label id="label" for="">Fecha de nacimiento</label>
-				<br>
-				<input class="uk-input uk-form-width-large" type="date" name="fecha" value="<%= usuario.fecha %> ">
-			</div>
-			<br>
-			</div>
-			<input type="hidden" name="id" value="<%= usuario.id %>">
-					<div class="boton-save">
-						<input class="button button2" type="submit" value="Save">
-					</div>
-					<% if (error) { %>
-					<p style="color: red;"> <%= error %> </p>
-					</p>
-					
-					<% } %>
+				<% if (error) { %>
+				<p style="color: red;"> <%= error %> </p>
+				</p>
 
-			</form>	
-		</div>	
-	</h2>
+				<% } %>
+
+				</form>
+		</div>
+		</h2>
 	</div>
-          
+
 
 	<!-- footer -->
 	<%- include('partials/footer.ejs') %>

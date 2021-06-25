@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<%- include('partials/head') %>
+<%- include('partials/head') %>
+
 <body>
 
 
 	<% if (logueado) { %>
-		<%- include('partials/headerLogueado') %>
+	<%- include('partials/headerLogueado') %>
 
-	<% } else { %> 
-		<%- include('partials/header') %>
+	<% } else { %>
+	<%- include('partials/header') %>
 	<% } %>
 
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h1 id= "titulo"> <span>Editar producto</span></h1>
+				<h1 id="titulo"> <span>Editar producto</span></h1>
 			</div>
 
-	<h2 class="col-12"> 			
-			<div class= "flex-container">
-			<form action="/modificar" method="POST"  enctype="multipart/form-data">
-				<div class="uk-margin">
-					<label id="label" for="">Nombre</label>
-					<br>
-					<div class="uk-inline">  
-					<span class="uk-form-icon" uk-icon="icon: user"></span>
-					<input class="uk-input uk-form-width-large" type="text" name="nombre"value="<%= usuario.nombre_producto %> " required>
-					</div>
-				</div>
-				<div class="uk-margin">
-					<label id="label" for="">Descripcion</label>
-					<br>
-					<div class="uk-inline">
-					<span class="uk-form-icon" uk-icon="icon: mail"></span>
-					<input class="uk-input uk-form-width-large" type="text" name="descripcion"value="<%= usuario.descripcion %> " required>
-					</div>
-				</div>
-				<div class="uk-margin">
-					<label id="label" for="">Imagen</label>
-					<br>
-					<div class="uk-inline">
-					<span class="uk-form-icon" uk-icon="icon: mail"></span>
-					<input class="uk-input uk-form-width-large" type="file" name="imagen"value="<%= usuario.url %> " required>
-					</div>
-				</div>
-			
-			<input type="hidden" name="id" value="<%= usuario.id %>">
-					<div class="boton-save">
-						<input class="button button2" type="submit" value="Save">
-					</div>
-					
+			<h2 class="col-12">
+				<div class="flex-container">
+					<form action="/modificar" method="POST" enctype="multipart/form-data">
+						<div class="uk-margin">
+							<label id="label" for="">Nombre</label>
+							<br>
+							<div class="uk-inline">
+								<span class="uk-form-icon" uk-icon="icon: user"></span>
+								<input class="uk-input uk-form-width-large" type="text" name="nombre"
+									value="<%= usuario.nombre_producto %> " required>
+							</div>
+						</div>
+						<div class="uk-margin">
+							<label id="label" for="">Descripcion</label>
+							<br>
+							<div class="uk-inline">
+								<span class="uk-form-icon" uk-icon="icon: mail"></span>
+								<input class="uk-input uk-form-width-large" type="text" name="descripcion"
+									value="<%= usuario.descripcion %> " required>
+							</div>
+						</div>
+						<div class="uk-margin">
+							<label id="label" for="">Imagen</label>
+							<br>
+							<div class="uk-inline">
+								<span class="uk-form-icon" uk-icon="icon: mail"></span>
+								<input class="uk-input uk-form-width-large" type="file" name="imagen"
+									value="<%= usuario.url %> " required>
+							</div>
+						</div>
 
-			</form>	
-		</div>	
-	</h2>
-	</div>
-          
-     <%- include('partials/footer.ejs') %>
+						<input type="hidden" name="id" value="<%= usuario.id %>">
+						<div class="boton-save">
+							<input class="button button2" type="submit" value="Save">
+						</div>
+
+
+					</form>
+				</div>
+			</h2>
+		</div>
+
+		<%- include('partials/footer.ejs') %>
 </body>
+
 </html>

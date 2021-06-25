@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 
-	
-    <%- include('partials/head.ejs') %>
+
+<%- include('partials/head.ejs') %>
 
 <body>
-	
 
-	<%- include('partials/header.ejs') %>
-	<!-- Novedades -->
-	<h1 id="titulo"><span>Registrarse</span></h1>
+
+    <%- include('partials/header.ejs') %>
+    <!-- Novedades -->
+    <h1 id="titulo"><span>Registrarse</span></h1>
     <div class="flex-container">
-		<form id="formRegister" method="POST" class="uk-background-secondary uk-padding uk-padding-large" action="/users/register" enctype="multipart/form-data >
-			<div class="uk-margin">
+        <form id="formRegister" method="POST" class="uk-background-secondary uk-padding uk-padding-large"
+            action="/users/register" enctype="multipart/form-data >
+			<div class=" uk-margin">
             <label id="label" for="">Nombre</label>
             <br>
-            <div class="uk-inline">  
-            <span class="uk-form-icon" uk-icon="icon: user"></span>
-            <input class="uk-input uk-form-width-large" type="text" name="nombre">
-        </div>
-        </div>
-        <div class="uk-margin">
-            <label id="label" for="">E-mail</label>
-            <br>
             <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input uk-form-width-large" type="text" name="nombre">
+            </div>
+    </div>
+    <div class="uk-margin">
+        <label id="label" for="">E-mail</label>
+        <br>
+        <div class="uk-inline">
             <input class="uk-input uk-form-width-large" type="email" name="email">
         </div>
-        </div>
-        <div class="uk-margin">
-            <label id="label" for="">Contraseña</label>
-            <br>
-            <div class="uk-inline">
+    </div>
+    <div class="uk-margin">
+        <label id="label" for="">Contraseña</label>
+        <br>
+        <div class="uk-inline">
             <input class="uk-input uk-form-width-large" type="password" name="password">
-            </div>
         </div>
-        <div class="uk-margin">
-            <label id="label" for="">Fecha de nacimiento</label>
-            <br>
-            <input class="uk-input uk-form-width-large" type="date" name="fecha_de_nacimiento">
-        </div>
-        <div class="uk-margin">
-            <label id="label" for="">Foto de perfil</label>
-            <br>
-            <input type="file"  name="foto">
-        </div> 
+    </div>
+    <div class="uk-margin">
+        <label id="label" for="">Fecha de nacimiento</label>
+        <br>
+        <input class="uk-input uk-form-width-large" type="date" name="fecha_de_nacimiento">
+    </div>
+    <div class="uk-margin">
+        <label id="label" for="">Foto de perfil</label>
+        <br>
+        <input type="file" name="foto">
+    </div>
 
- </div>   
-    <div class= "boton-registform">     
+    </div>
+    <div class="boton-registform">
         <input class="button button2" type="submit" value="Enviar">
 
     </div>
 
-    </form> 
-</div>
-          
-	<!-- footer -->
-	<%- include('partials/footer.ejs') %>
-	<!-- /footer -->
+    </form>
+    </div>
+
+    <!-- footer -->
+    <%- include('partials/footer.ejs') %>
+    <!-- /footer -->
 </body>
 
 </html>

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 
-	<%- include('partials/head') %>
+<%- include('partials/head') %>
 
 <body>
-	
+
 
 	<% if (logueado) { %>
-		<%- include('partials/headerLogueado') %>
+	<%- include('partials/headerLogueado') %>
 
-	<% } else { %> 
-		<%- include('partials/header') %>
+	<% } else { %>
+	<%- include('partials/header') %>
 	<% } %>
 
 	<!-- Datos del usuario -->
@@ -22,18 +22,18 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"> <%= usuario.usuario %> 
+					<h1 class="main-title"> <%= usuario.usuario %>
 						<a href="/users/profile-edit/<%= usuario.id %> ">
 							<i class="fas fa-cogs"></i>
-						</a>			
+						</a>
 					</h1>
-					<a class="btn mt-3 ml-4" href="">SEGUIR</a>		
+					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
 				<br>
 				<div>
 					<ul class="">
 						<li> <%= usuario.productos.length %> productos</li>
-						<li> <%= usuario.comentarios.length %>  comentarios</li>
+						<li> <%= usuario.comentarios.length %> comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -42,17 +42,17 @@
 		<body>
 			<br>
 			<h3 class="tit-datos"> Contacto:</h3>
-	
-				<div class="uk-inline">
-					<i class="far fa-envelope"></i>
-					<label id="datos" for="">E-mail: <%= usuario.mail %>  </label>    
+
+			<div class="uk-inline">
+				<i class="far fa-envelope"></i>
+				<label id="datos" for="">E-mail: <%= usuario.mail %> </label>
 			</div>
-				<br>
-				<div class="uk-inline">
-					<i class="far fa-calendar-alt"></i>
-					<label id="datos" for="">Fecha de nacimiento: <%= usuario.fecha %> </label>
+			<br>
+			<div class="uk-inline">
+				<i class="far fa-calendar-alt"></i>
+				<label id="datos" for="">Fecha de nacimiento: <%= usuario.fecha %> </label>
 			</div>
-			
+
 
 	</section>
 	<!-- /Datos del usuario -->
@@ -64,9 +64,9 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 			<!-- Show mis productos -->
-			<% usuario.productos.forEach (element=> { %>	
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
+			<% usuario.productos.forEach (element=> { %>
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
 					<a href="/productos/<%= element.id%>">
 						<figure class="product-box_image">
 							<img src="/images/products/<%= element.url %>" alt="producto">
@@ -89,5 +89,6 @@
 	<!-- footer -->
 	<%- include('partials/footer.ejs') %>
 	<!-- /footer -->
-</body>	
+</body>
+
 </html>
