@@ -23,7 +23,7 @@ descripcion varchar(1000),
 usuarios_id INT UNSIGNED,
 createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY (usuarios_id) REFERENCES usuarios (id)
+FOREIGN KEY (usuarios_id) REFERENCES usuarios (id) ON DELETE CASCADE 
 );
 
 CREATE TABLE comentarios (
@@ -33,8 +33,8 @@ usuarios_id INT UNSIGNED,
 comentario TEXT ,
 createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-FOREIGN KEY (usuarios_id) REFERENCES usuarios (id),
-FOREIGN KEY (productos_id) REFERENCES productos (id)
+FOREIGN KEY (usuarios_id) REFERENCES usuarios (id) ON DELETE CASCADE, 
+FOREIGN KEY (productos_id) REFERENCES productos (id)ON DELETE CASCADE 
 );
 
 
@@ -55,7 +55,8 @@ VALUES (DEFAULT, "Francisco Finardi", "fjfinardi@udesa.edu.ar","0706","1992-06-0
 
 INSERT INTO usuarios
 VALUES (DEFAULT, "Maria Undem", "mundem@udesa.edu.ar","2904","1997-04-29",27,"maria-undem.jpeg", DEFAULT, DEFAULT);
-SELECT * FROM usuarios;
+
+-- SELECT * FROM usuarios;
 
 INSERT INTO productos
 VALUES (DEFAULT, "producto1.webp", "Cuchas personalizadas",
@@ -113,7 +114,7 @@ VALUES (DEFAULT, "producto10.webp", "Comedor Perros Acero Inox",
 * Su base de goma evita el deslizamiento y los ruidos molestos.
 * Fácil de limpiar lo que lo hace muy higiénico", 2, DEFAULT, DEFAULT);
 
-SELECT * FROM productos;
+-- SELECT * FROM productos;
 
 
 INSERT INTO comentarios
@@ -257,4 +258,4 @@ VALUES (DEFAULT, 2,4, "Lo use y lo recomiendo!",  DEFAULT, DEFAULT);
 INSERT INTO comentarios
 VALUES (DEFAULT, 3,6, "Mi mascota esta feliz!!", DEFAULT, DEFAULT);
 
-SELECT * FROM comentarios;
+-- SELECT * FROM comentarios;
