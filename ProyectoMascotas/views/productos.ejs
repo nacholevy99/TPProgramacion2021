@@ -18,7 +18,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= lista.nombre_producto %></h2>
 			
-			<% if (logueado) { %>
+			<% if (logueado && lista.usuario.id==miUsuario.id) { %>
 			<p class="product-detail-description">
 				<a href="/modificar/<%= lista.id %>"><i class="fas fa-cogs"></i></a>
 			</p>
