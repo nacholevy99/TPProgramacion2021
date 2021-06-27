@@ -49,6 +49,16 @@
 								value="<%= usuario.fecha %> ">
 						</div>
 						<br>
+						<div class="uk-margin">
+							<label id="label" for="">Foto de perfil</label>
+							<br>
+							<input type="file" name="foto">
+						</div>
+						<% if (error) { %>
+							<div class="error-login">
+								<p> <%= error %> </p>
+							</div>
+							<% } %>
 				</div>
 				<input type="hidden" name="id" value="<%= usuario.id %>">
 				<div class="boton-save">
