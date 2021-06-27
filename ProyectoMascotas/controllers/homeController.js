@@ -179,7 +179,7 @@ module.exports = {
 
                 res.render('search-results', {
                     buscar: resultado,
-                    error: "No existen resultados de busqueda",
+                    error: "No existen resultados para tu búsqueda",
                 });
                 } else { 
                     console.log(JSON.stringify(resultado));

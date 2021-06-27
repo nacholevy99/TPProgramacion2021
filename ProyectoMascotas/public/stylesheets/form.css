@@ -69,3 +69,11 @@ div.flex-container {
   font-weight: 400;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.error-search {
+  color: red;
+  text-align: center;
+  font-size: medium;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
