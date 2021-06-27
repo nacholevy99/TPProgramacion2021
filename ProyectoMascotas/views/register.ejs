@@ -45,7 +45,11 @@
         <br>
         <input type="file" name="foto">
     </div>
-
+	<% if (error) { %>
+		<div class="error-login">
+			<p> <%= error %> </p>
+		</div>
+		<% } %>
     </div>
     <div class="boton-registform">
         <input class="button button2" type="submit" value="Enviar">

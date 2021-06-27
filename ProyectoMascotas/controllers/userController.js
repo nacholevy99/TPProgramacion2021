@@ -18,9 +18,14 @@ module.exports = {
     },
 
     register: (req, res) => {
-        res.render('register', {
-            title: "Register yourself"
-        })
+        if (req.session.usuario) {
+            res.redirect("/")
+        } else {
+            res.render('register', {
+                title: "Register yourself",
+                error: null
+            })
+        }
     },
 
     profile: (req, res) => {
@@ -125,33 +130,61 @@ module.exports = {
     },
 
     registerpost: (req, res) => {
-        let password = bcrypt.hashSync(req.body.password)
-        if(req.file){
-            db.Usuario.create({
-                usuario: req.body.nombre,
-                mail: req.body.email,
-                contraseña: password,
-                fecha: req.body.fecha_de_nacimiento,
-                url: req.file.filename
-            })
-            .then(Usuario => {
-                res.redirect('/')
-
-            })
-        }else{
-            db.Usuario.create({
-                usuario: req.body.nombre,
-                mail: req.body.email,
-                contraseña: password,
-                fecha: req.body.fecha_de_nacimiento,
-                url: "default.png"
-            })
-            .then(Usuario => {
-                res.redirect('/')
-
+        if (!req.body.nombre || !req.body.email || !req.body.password || !req.body.fecha_de_nacimiento) {
+            res.render("register", {
+                title: "Register yourself",
+                error: "Los campos no pueden estar vacios"
             })
         }
-       
+        if (req.body.password.length < 3) {
+            res.render("register", {
+                title: "Register yourself",
+                error: "La contraseña debe tener más de 3 caracteres"
+            })
+        }
+        db.Usuario.findOne({
+                where: {
+                    mail: req.body.email
+                }
+            })
+            .then(resultado => {
+                if (resultado) {
+                    res.render("register", {
+                        title: "Register yourself",
+                        error: "Este mail ya está registrado!"
+                    })
+                } else {
+                    let password = bcrypt.hashSync(req.body.password)
+                    if (req.file) {
+                        db.Usuario.create({
+                                usuario: req.body.nombre,
+                                mail: req.body.email,
+                                contraseña: password,
+                                fecha: req.body.fecha_de_nacimiento,
+                                url: req.file.filename
+                            })
+                            .then(Usuario => {
+                                res.redirect('/')
+
+                            })
+                    } else {
+                        db.Usuario.create({
+                                usuario: req.body.nombre,
+                                mail: req.body.email,
+                                contraseña: password,
+                                fecha: req.body.fecha_de_nacimiento,
+                                url: "default.png"
+                            })
+                            .then(Usuario => {
+                                res.redirect('/')
+
+                            })
+                    }
+                }
+            })
+
+
+
     },
     loginValidate: (req, res) => {
         // Filtramos el usuario a traves de un campo que sea UNICO en la base de datos
