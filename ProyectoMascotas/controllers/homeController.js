@@ -147,26 +147,19 @@ module.exports = {
 
 
         const filtro = {
+
             where: {
+                [Op.or]: [{ 
                 nombre_producto: {
                     [Op.like]: '%' + req.query.search + '%'
                 },
-            },
-            include: [{
-                association: 'usuario',
-                include: {
-                    association: 'comentarios'
-                }
-            }, {
-                association: 'comentarios'
-            }],
-        }
-        let filtro2 = {
-            where: {
+                },
+                { 
                 descripcion: {
                     [Op.like]: '%' + req.query.search + '%'
                 },
-            },
+                }
+            ]},
             include: [{
                 association: 'usuario',
                 include: {
@@ -176,17 +169,28 @@ module.exports = {
                 association: 'comentarios'
             }],
         }
-
+       
         db.Producto.findAll(filtro).then(resultado => {
-            db.Producto.findAll(filtro2).then(resultado2 => {
+            if(resultado == "" || req.query.search == ""){ 
+                console.log("no hay resultados");
+                console.log("req.query.search");
+
+                console.log(JSON.stringify(resultado));
+
                 res.render('search-results', {
                     buscar: resultado,
-                    buscar2: resultado2
+                    error: "No existen resultados de busqueda",
                 });
-            });
+                } else { 
+                    console.log(JSON.stringify(resultado));
+                    console.log("si hay resultados");
 
-
-        });
+                    res.render('search-results', {
+                        buscar: resultado,
+                        error: null
+                    });
+                    }
+        }) .catch(errorsearch => console.log (errorsearch));;
     },
     store: (req, res) => {
         if (!req.body.titulo || !req.body.descripcion || !req.file) {
