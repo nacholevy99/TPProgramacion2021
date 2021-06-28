@@ -155,19 +155,31 @@ module.exports = {
                     })
                 } else {
                     let password = bcrypt.hashSync(req.body.password)
-                    
+                    if (req.file) {
                         db.Usuario.create({
                                 usuario: req.body.nombre,
                                 mail: req.body.email,
                                 contraseña: password,
                                 fecha: req.body.fecha_de_nacimiento,
-                                url: req.body.foto
+                                url: req.file.filename
                             })
                             .then(Usuario => {
                                 res.redirect('/')
 
                             })
-                  
+                    } else {
+                        db.Usuario.create({
+                                usuario: req.body.nombre,
+                                mail: req.body.email,
+                                contraseña: password,
+                                fecha: req.body.fecha_de_nacimiento,
+                                url: "default.png"
+                            })
+                            .then(Usuario => {
+                                res.redirect('/')
+
+                            })
+                    }
                 }
             })
 
